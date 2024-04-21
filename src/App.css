@@ -1,38 +1,145 @@
+body {
+  background-color: hwb(226 11% 81%); /* Example color */
+  display: flex;       /* Enables Flexbox */
+  flex-direction: column; /* Stacks child elements vertically */
+  align-items: center; /* Optionally centers items horizontally */
+  justify-content: center;
+}
+
 .App {
-  text-align: center;
+  display: flex;       /* Enables Flexbox */
+  flex-direction: column; /* Stacks child elements vertically */
+  align-items: center; /* Centers items horizontally within the container */
+  justify-content: start; /* Aligns items to the start of the flex container (top) */
+  width: 100%; /* Adjust width as needed */
+  margin-top: 0;
+  padding-top: 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* .App-header {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row; 
+  align-items: flex-start;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: white;
+} */
+
+.header {
+  position: absolute;
+  left:5vw;
+  top:8vh;
+  display: block;
+  overflow-x: clip;
 }
 
-.App-link {
-  color: #61dafb;
+.top-left-image {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.center-content {
+  display: flex;
+  margin: auto; /* Center the content */
+}
+
+/* If additional styling for .content is needed, add it here */
+.content {
+  width: 100%;
+  text-align: center; /* Optional, if you want to center the text */
+}
+
+.tagline {
+  color:#FFF;
+  font-size: 20px;
+}
+
+.time-location {
+  color:#FFF;
+  font-size: 20px;
+}
+
+.info {
+  color:#FFF;
+  font-size: 20px;
+}
+
+.button-link {
+  display: inline-block;
+  padding: 20px 25px;
+  background-color: rgb(255, 234, 100);
+  color: rgba(0, 0, 0, 0.702);
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.faq {
+  width: 90vh; /* Adjust the width as needed */
+  background-color: #353f5f; /* Background color of the rectangle */
+  padding: 20px; /* Space between the contents and the rectangle's edges */
+  border-radius: 25px; /* Adjust to get the desired roundness of corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for depth */
+
+  /* Centering the content inside the rectangle */
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  padding-left:50px;
+
+  /* Other optional styles for appearance */
+  margin: 20px auto; /* Adds margin around the rectangle */
+  text-align: left; /* Aligns text in the center, if needed */
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-logo {
+  padding:20px
+}
+
+
+.sunset-full {
+  min-height: 100vh;
+  min-width: 100vw;
+  position: relative;
+}
+
+.sun-image {
+  height: 150px;
+  position: absolute;
+  left: 50%;
+  position: translateX(-50%);
+}
+
+.hills-front {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* .hills-back {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+} */
+
+.hills_back_all {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.clouds {
+  position: absolute;
+  top: 0;
+  right: 0;
 }

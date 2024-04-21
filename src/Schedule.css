@@ -1,0 +1,33 @@
+.schedule-container {
+
+    width: 90vh; /* Adjust the width as needed */
+    background-color: #353f5f; /* Background color of the rectangle */
+    padding: 20px; /* Space between the contents and the rectangle's edges */
+    border-radius: 25px; /* Adjust to get the desired roundness of corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for depth */
+  
+    /* Centering the content inside the rectangle */
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    padding-left:50px;
+  
+    /* Other optional styles for appearance */
+    margin: 20px auto; /* Adds margin around the rectangle */
+    text-align: left; /* Aligns text in the center, if needed */
+  }
+
+.schedule-type {
+    color:white;
+    font-weight:bold;
+    font-size:25px;
+    padding-right:5px;
+}
+
+.schedule-type:hover {
+    color:rgb(255, 234, 100);
+    font-weight:bold;
+    font-size:25px;
+    padding-right:5px;
+}
