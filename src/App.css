@@ -95,16 +95,25 @@ body {
   padding:20px
 }
 
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index:-1;
+}
 
 .sunset-top {
-  min-height: 100vh;
-  min-width: 100vw;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
   position: relative;
 }
 
 .sun {
   position: absolute;
-  z-index: -1;
+  z-index: -2;
 }
 
 .hills-front {
@@ -129,9 +138,9 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  position: relative;
   animation: floatUpDown 6s infinite alternate;
 }
+
 @keyframes floatUpDown {
   0%, 100% {
     transform: translateX(0);
@@ -152,6 +161,6 @@ body {
 
 @media (max-width: 900px) {
   .clouds {
-    top:100px;
+    top:100vh;
   }
 }

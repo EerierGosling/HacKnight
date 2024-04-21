@@ -4,22 +4,22 @@ import events from './Events.json';
 import React, { useState } from 'react';
 
 function Schedule() {
-  const [showing_events, setShowingEvents] = useState(events.coding_summit);
+  const [showing_events, setShowingEvents] = useState(events.learnathon);
 
-  function changeToSummit() {
-    setShowingEvents(events.coding_summit);
+  function changeToLearnathon() {
+    setShowingEvents(events.learnathon);
   }
   function changeToHackathon() {
     setShowingEvents(events.hackathon);
   }
 
   return (
-    <div className="schedule-container">
+    <div className="schedule-container" style={{width:`${Math.min(window.innerWidth-150, 800)}px`}}>
         <p className="schedule-title" style={{fontSize:"40px", color:"white", fontWeight:"bold"}}>
           Schedule
         </p>
         <div style={{display: 'flex'}}>
-            <p className="schedule-type" onClick={changeToSummit} style={{color: showing_events===events.coding_summit ? "rgb(255, 234, 100)" : "white", paddingRight:"30px"}}>Coding Summit</p>
+            <p className="schedule-type" onClick={changeToLearnathon} style={{color: showing_events===events.learnathon ? "rgb(255, 234, 100)" : "white", paddingRight:"30px"}}>Learnathon</p>
             <p className="schedule-type" onClick={changeToHackathon} style={{color: showing_events===events.hackathon ? "rgb(255, 234, 100)" : "white"}}>Hackathon</p>
         </div>
         

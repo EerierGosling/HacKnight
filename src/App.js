@@ -4,8 +4,8 @@ import './App.css';
 import Question from './Question'
 import Schedule from './Schedule'
 import questions from './Questions.json';
-import Intro_Section from './Intro_Section'
-import intro_sections_info from './Intro.json';
+import IntroSection from './IntroSection.js'
+import intro_sections from './Intro.json';
 
 import React, { useState, useEffect } from 'react';
 import sun_image from './assets/sun.png';
@@ -58,18 +58,21 @@ function App() {
     };
   }, [getColor, scrollY]);
 
+  const mobile_view = viewWidth < 900;
+
+  const hills_size_num = Math.min(viewWidth, viewHeight);
+  const hills_size = `${hills_size_num}px`;
+
   const starting_x = .5;
-  const starting_y = .05;
+  const starting_y = mobile_view ? Math.max(.12, (1 - (hills_size_num*1.2)/viewHeight)/2) : .05;
 
   const r_x = .9-starting_x;
   const r_y = 1-starting_y;
 
-  const top_padding_num = Math.min(100*(r_y*(-Math.cos(scrollY*6.2))+(starting_y+1)), 100-20);
+  const top_padding_num = Math.min(100*(r_y*(-Math.cos(scrollY*5.6))+(starting_y+1)), 100-20);
   const top_padding = `${top_padding_num}vh`;
-  const left_padding = `${top_padding_num == 100-20 ? 100 : 100*(r_x*(Math.sin(scrollY*6.2))+starting_x)}vw`;
+  const left_padding = `${top_padding_num === 100-20 ? 100 : 100*(r_x*(Math.sin(scrollY*5.6))+starting_x)}vw`;
 
-  const hills_size_num = Math.min(viewWidth, viewHeight);
-  const hills_size = `${hills_size_num}px`;
 
   const hills_between_arr = Array.from({ length: Math.ceil(viewWidth/hills_size_num) }, (_, index) => (
     <img className="hills-back" src={hills_between} alt="hills" style={{height:hills_size, width:hills_size}} key={index} />
@@ -79,20 +82,24 @@ function App() {
     <div className="App">
       <div className="sunset-full">
         <div className="sunset-top">
-          <div className="image-container">
-            <img className="sun" src={sun_image} alt="sun" style={{ top: top_padding, left: left_padding, height:`${Math.min(viewHeight*.2, viewWidth*.2)}px`}} />
+
+          <div className="background">
+            <div className="image-container">
+              <img className="sun" src={sun_image} alt="sun" style={{ top: top_padding, left: left_padding, height:`${Math.min(viewHeight*.2, viewWidth*.2)}px`}} />
+            </div>
+            <img className="clouds" src={clouds} alt="clouds" style={{height:hills_size, width:hills_size, top:`${viewHeight - hills_size_num + (viewWidth > 600 && viewWidth < 900 ? 80 : 0)}px`}} />
+            <div className="hills_back_all" style={{ display: 'flex' }} >
+              {hills_between_arr}
+              <img className="hills-back" src={hills_back} alt="hills" style={{height:hills_size, width:hills_size}} />
+            </div>
+            <img className="hills-front" src={hills_front} alt="hills" style={{height:hills_size, width:hills_size}} />
+            </div>
           </div>
-          <img className="clouds" src={clouds} alt="clouds" style={{height:hills_size, width:hills_size}} />
-          <div className="hills_back_all" style={{ display: 'flex' }} >
-            {hills_between_arr}
-            <img className="hills-back" src={hills_back} alt="hills" style={{height:hills_size, width:hills_size}} />
-          </div>
-          <img className="hills-front" src={hills_front} alt="hills" style={{height:hills_size, width:hills_size}} />
 
           <div className="header">
             <div className="center-content">
               {/* <img src={hacknight_logo} alt="HacKnight Logo" className="center-image" height="200px"/> */}
-              <img src={hacknight_text} alt="HacKnight" style={{width:"40vw", transform:"translateX(-1vw)" }} />
+              <img src={hacknight_text} alt="HacKnight" style={{width:`${mobile_view ? 90 : 40 }vw`, transform:"translateX(-1vw)" }} />
               {console.log(viewWidth)}
             </div>
             <p className="time-location">
@@ -106,27 +113,30 @@ function App() {
             </p>
             <div className="signup-button">
               <a href="https://forms.gle/pUeC3qFb2ZLw31Uc8" className="button-link" target="_blank" >Sign Up!</a>
-            </div>
           </div>
+
         </div>
+
         <div className="hill-gradient" style={{ height: "30vh"}}>
           <img className="hill_trail" src={hill_trail} alt="hills" style={{width:hills_size}} />
         </div>
       </div>
       <div className="intro">
-        {/* {intro_sections_info.map((image, text) => <Intro_Section image={require(`${image}`).default} text={text} /> )} */}
+        {intro_sections.map((section) => (
+          <IntroSection key={section.id} image={require(`${section.image}`)} text={section.text} />
+        ))}
       </div>
 
       <Schedule/>
 
-      <div className="faq">
+      <div className="faq" style={{width:`${Math.min(window.innerWidth-150, 800)}px`}}>
         <p className="schedule-title" style={{fontSize:"25px", color:"white", fontWeight:"bold"}}>
           FAQ
         </p>
-        {questions.map((question) => <Question question={question.question} answer={question.answer}/>)}
+        {questions.map((question) => <Question key={question.id} question={question.question} answer={question.answer}/>)}
       </div>
       <p style={{color:"white", fontSize:"20px"}}>
-        Are your parents worried? Check out our <a href="https://docs.google.com/document/d/1aEw7TnrpIMvxieIG05MEdHZIlIyduqal0dBauwb52Qo/preview" target="_blank" style={{color:"yellow"}}>Parent's Guide</a>!
+        Are your parents worried? Check out our <a href="https://docs.google.com/document/d/153dYEuwn99BKUlF328-Ua3jw0sY1UDIEqdfRUL9dRaQ/edit?usp=sharing/preview" target="_blank" style={{color:"yellow"}}>Parent's Guide</a>!
       </p>
       <div className="footer" style={{paddingBottom:"10px"}}>
         <img src="https://www.bbns.org/wp-content/uploads/2023/08/BBandN_logo-white.svg" className="bottom-logo" alt="BB&N Logo" height="100px"/>

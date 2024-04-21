@@ -1,6 +1,6 @@
 .schedule-container {
 
-    width: 90vh; /* Adjust the width as needed */
+    width: 80vw; /* Adjust the width as needed */
     background-color: #353f5f; /* Background color of the rectangle */
     padding: 20px; /* Space between the contents and the rectangle's edges */
     border-radius: 25px; /* Adjust to get the desired roundness of corners */
