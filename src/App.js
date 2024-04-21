@@ -71,7 +71,7 @@ function App() {
 
   const top_padding_num = Math.min(100*(r_y*(-Math.cos(scrollY*5.6))+(starting_y+1)), 100-20);
   const top_padding = `${top_padding_num}vh`;
-  const left_padding = `${top_padding_num === 100-20 ? 100 : 100*(r_x*(Math.sin(scrollY*5.6))+starting_x)}vw`;
+  const left_padding = `${100*(r_x*(Math.sin(scrollY*5.6))+starting_x)}vw`;
 
 
   const hills_between_arr = Array.from({ length: Math.ceil(viewWidth/hills_size_num) }, (_, index) => (
@@ -85,7 +85,9 @@ function App() {
 
           <div className="background">
             <div className="image-container">
-              <img className="sun" src={sun_image} alt="sun" style={{ top: top_padding, left: left_padding, height:`${Math.min(viewHeight*.2, viewWidth*.2)}px`}} />
+              {scrollY < .2 &&
+                <img className="sun" src={sun_image} alt="sun" style={{ top: top_padding, left: left_padding, height:`${Math.min(viewHeight*.2, viewWidth*.2)}px`}} />
+              }
             </div>
             <img className="clouds" src={clouds} alt="clouds" style={{height:hills_size, width:hills_size, top:`${viewHeight - hills_size_num + (viewWidth > 600 && viewWidth < 900 ? 80 : 0)}px`}} />
             <div className="hills_back_all" style={{ display: 'flex' }} >
@@ -122,8 +124,8 @@ function App() {
         </div>
       </div>
       <div className="intro">
-        {intro_sections.map((section) => (
-          <IntroSection key={section.id} image={require(`${section.image}`)} text={section.text} />
+        {intro_sections.map((section, index) => (
+          <IntroSection key={section.id} image={require(`${section.image}`)} text={section.text} index={index} />
         ))}
       </div>
 
@@ -139,8 +141,12 @@ function App() {
         Are your parents worried? Check out our <a href="https://docs.google.com/document/d/153dYEuwn99BKUlF328-Ua3jw0sY1UDIEqdfRUL9dRaQ/edit?usp=sharing/preview" target="_blank" style={{color:"yellow"}}>Parent's Guide</a>!
       </p>
       <div className="footer" style={{paddingBottom:"10px"}}>
-        <img src="https://www.bbns.org/wp-content/uploads/2023/08/BBandN_logo-white.svg" className="bottom-logo" alt="BB&N Logo" height="100px"/>
-        <img src="https://assets.hackclub.com/flag-standalone-wtransparent.svg" className="bottom-logo" alt="Hack Club Logo" height="70px"/>
+        <a href="https://bbns.org" target="_blank">
+          <img src="https://www.bbns.org/wp-content/uploads/2023/08/BBandN_logo-white.svg" className="bottom-logo" alt="BB&N Logo" height="100px"/>
+        </a>
+        <a href="https://hackclub.com" target="_blank">
+          <img src="https://assets.hackclub.com/flag-standalone-wtransparent.svg" className="bottom-logo" alt="Hack Club Logo" height="70px"/>
+        </a>
       </div>
     </div>
   );
