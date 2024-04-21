@@ -1,11 +1,11 @@
 import './Intro_Section.css';
-import React, { useState } from 'react';
 
-function Intro_Section({question, answer}) {
+function Intro_Section({image, text}) {
 
   return (
     <div className="question-dropdown">
-      
+      <img src={image} style={{}} />
+      <p> {text} </p>
     </div>
   );
 }

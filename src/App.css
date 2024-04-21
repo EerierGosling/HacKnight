@@ -103,10 +103,7 @@ body {
 }
 
 .sun {
-  height: 150px;
   position: absolute;
-  left: 50%;
-  position: translateX(-50%);
   z-index: -1;
 }
 
@@ -132,6 +129,16 @@ body {
   position: absolute;
   top: 0;
   right: 0;
+  position: relative;
+  animation: floatUpDown 6s infinite alternate;
+}
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10px); /* Adjust the floating distance */
+  }
 }
 
 .hill-gradient {
@@ -141,4 +148,10 @@ body {
 
   /* Define the gradient */
   background: linear-gradient(to bottom, rgb(92, 144, 96), rgba(0,0,0,0));
+}
+
+@media (max-width: 900px) {
+  .clouds {
+    top:100px;
+  }
 }

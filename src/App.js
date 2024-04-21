@@ -4,6 +4,8 @@ import './App.css';
 import Question from './Question'
 import Schedule from './Schedule'
 import questions from './Questions.json';
+import Intro_Section from './Intro_Section'
+import intro_sections_info from './Intro.json';
 
 import React, { useState, useEffect } from 'react';
 import sun_image from './assets/sun.png';
@@ -78,7 +80,7 @@ function App() {
       <div className="sunset-full">
         <div className="sunset-top">
           <div className="image-container">
-            <img className="sun" src={sun_image} alt="sun" style={{ top: top_padding, left: left_padding}} />
+            <img className="sun" src={sun_image} alt="sun" style={{ top: top_padding, left: left_padding, height:`${Math.min(viewHeight*.2, viewWidth*.2)}px`}} />
           </div>
           <img className="clouds" src={clouds} alt="clouds" style={{height:hills_size, width:hills_size}} />
           <div className="hills_back_all" style={{ display: 'flex' }} >
@@ -112,7 +114,7 @@ function App() {
         </div>
       </div>
       <div className="intro">
-
+        {/* {intro_sections_info.map((image, text) => <Intro_Section image={require(`${image}`).default} text={text} /> )} */}
       </div>
 
       <Schedule/>
@@ -124,7 +126,7 @@ function App() {
         {questions.map((question) => <Question question={question.question} answer={question.answer}/>)}
       </div>
       <p style={{color:"white", fontSize:"20px"}}>
-        Are your parents worried? Check out our <a href="add the link!!" style={{color:"yellow"}}>Parent's Guide</a>!
+        Are your parents worried? Check out our <a href="https://docs.google.com/document/d/1aEw7TnrpIMvxieIG05MEdHZIlIyduqal0dBauwb52Qo/preview" target="_blank" style={{color:"yellow"}}>Parent's Guide</a>!
       </p>
       <div className="footer" style={{paddingBottom:"10px"}}>
         <img src="https://www.bbns.org/wp-content/uploads/2023/08/BBandN_logo-white.svg" className="bottom-logo" alt="BB&N Logo" height="100px"/>
