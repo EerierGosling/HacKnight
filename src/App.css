@@ -1,29 +1,20 @@
 body {
-  background-color: hwb(226 11% 81%); /* Example color */
-  display: flex;       /* Enables Flexbox */
-  flex-direction: column; /* Stacks child elements vertically */
-  align-items: center; /* Optionally centers items horizontally */
+  background-color: rgb(28, 33, 48);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
 .App {
-  display: flex;       /* Enables Flexbox */
-  flex-direction: column; /* Stacks child elements vertically */
-  align-items: center; /* Centers items horizontally within the container */
-  justify-content: start; /* Aligns items to the start of the flex container (top) */
-  width: 100%; /* Adjust width as needed */
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: start;
+  width: 100%;
   margin-top: 0;
   padding-top: 0;
 }
-/* .App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: row; 
-  align-items: flex-start;
-  justify-content: flex-start;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
 
 .header {
   position: absolute;
@@ -41,13 +32,13 @@ body {
 
 .center-content {
   display: flex;
-  margin: auto; /* Center the content */
+  margin: auto;
 }
 
-/* If additional styling for .content is needed, add it here */
+
 .content {
   width: 100%;
-  text-align: center; /* Optional, if you want to center the text */
+  text-align: center;
 }
 
 .tagline {
@@ -78,22 +69,20 @@ body {
 }
 
 .faq {
-  width: 90vh; /* Adjust the width as needed */
-  background-color: #353f5f; /* Background color of the rectangle */
-  padding: 20px; /* Space between the contents and the rectangle's edges */
-  border-radius: 25px; /* Adjust to get the desired roundness of corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for depth */
-
-  /* Centering the content inside the rectangle */
+  width: 90vh;
+  background-color: #353f5f;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ 
   display: flex;
   flex-direction: column;
   align-items: left;
   justify-content: center;
   padding-left:50px;
 
-  /* Other optional styles for appearance */
-  margin: 20px auto; /* Adds margin around the rectangle */
-  text-align: left; /* Aligns text in the center, if needed */
+  margin: 20px auto;
+  text-align: left;
 }
 
 .footer {
@@ -107,17 +96,18 @@ body {
 }
 
 
-.sunset-full {
+.sunset-top {
   min-height: 100vh;
   min-width: 100vw;
   position: relative;
 }
 
-.sun-image {
+.sun {
   height: 150px;
   position: absolute;
   left: 50%;
   position: translateX(-50%);
+  z-index: -1;
 }
 
 .hills-front {
@@ -142,4 +132,13 @@ body {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.hill-gradient {
+  /* Set the size of the gradient background */
+  width: 100%;
+  height: 100vh; /* Adjust the height as needed */
+
+  /* Define the gradient */
+  background: linear-gradient(to bottom, rgb(92, 144, 96), rgba(0,0,0,0));
 }

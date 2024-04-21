@@ -10,6 +10,7 @@ import sun_image from './assets/sun.png';
 import hills_front from './assets/hills_front.png';
 import hills_back from './assets/hills_back.png';
 import hills_between from './assets/hills_between.png';
+import hill_trail from './assets/hill_trail.png';
 import clouds from './assets/clouds.png';
 
 function App() {
@@ -61,8 +62,9 @@ function App() {
   const r_x = .9-starting_x;
   const r_y = 1-starting_y;
 
-  const top_padding = `${Math.min(100*(r_y*(-Math.cos(scrollY*6.2))+(starting_y+1)), 100-20)}vh`;
-  const left_padding = `${top_padding == viewHeight*(100-20) ? 100 : 100*(r_x*(Math.sin(scrollY*6.2))+starting_x)}vw`;
+  const top_padding_num = Math.min(100*(r_y*(-Math.cos(scrollY*6.2))+(starting_y+1)), 100-20);
+  const top_padding = `${top_padding_num}vh`;
+  const left_padding = `${top_padding_num == 100-20 ? 100 : 100*(r_x*(Math.sin(scrollY*6.2))+starting_x)}vw`;
 
   const hills_size_num = Math.min(viewWidth, viewHeight);
   const hills_size = `${hills_size_num}px`;
@@ -74,34 +76,39 @@ function App() {
   return (
     <div className="App">
       <div className="sunset-full">
-        <div className="image-container">
-          <img className="sun-image" src={sun_image} alt="sun" style={{ top: top_padding, left: left_padding}} />
-        </div>
-        <img className="clouds" src={clouds} alt="clouds" style={{height:hills_size, width:hills_size}} />
-        <div className="hills_back_all" style={{ display: 'flex' }} >
-          {hills_between_arr}
-          <img className="hills-back" src={hills_back} alt="hills" style={{height:hills_size, width:hills_size}} />
-        </div>
-        <img className="hills-front" src={hills_front} alt="hills" style={{height:hills_size, width:hills_size}} />
+        <div className="sunset-top">
+          <div className="image-container">
+            <img className="sun" src={sun_image} alt="sun" style={{ top: top_padding, left: left_padding}} />
+          </div>
+          <img className="clouds" src={clouds} alt="clouds" style={{height:hills_size, width:hills_size}} />
+          <div className="hills_back_all" style={{ display: 'flex' }} >
+            {hills_between_arr}
+            <img className="hills-back" src={hills_back} alt="hills" style={{height:hills_size, width:hills_size}} />
+          </div>
+          <img className="hills-front" src={hills_front} alt="hills" style={{height:hills_size, width:hills_size}} />
 
-        <div className="header">
-          <div className="center-content">
-            {/* <img src={hacknight_logo} alt="HacKnight Logo" className="center-image" height="200px"/> */}
-            <img src={hacknight_text} alt="HacKnight" style={{width:"40vw", transform:"translateX(-1vw)" }} />
-            {console.log(viewWidth)}
+          <div className="header">
+            <div className="center-content">
+              {/* <img src={hacknight_logo} alt="HacKnight Logo" className="center-image" height="200px"/> */}
+              <img src={hacknight_text} alt="HacKnight" style={{width:"40vw", transform:"translateX(-1vw)" }} />
+              {console.log(viewWidth)}
+            </div>
+            <p className="time-location">
+              June 1-2, <a href="https://maps.app.goo.gl/yovXzF5TM46DzRep9" target="_blank" style={{color:'yellow'}}>BB&N High School</a>
+            </p>
+            <p className="tagline">
+              free! boston! prizes!
+            </p>
+            <p className="info">
+              info
+            </p>
+            <div className="signup-button">
+              <a href="https://forms.gle/pUeC3qFb2ZLw31Uc8" className="button-link" target="_blank" >Sign Up!</a>
+            </div>
           </div>
-          <p className="time-location">
-            June 1-2, <a href="https://maps.app.goo.gl/yovXzF5TM46DzRep9" style={{color:'yellow'}}>BB&N High School</a>
-          </p>
-          <p className="tagline">
-            free! boston! prizes!
-          </p>
-          <p className="info">
-            info
-          </p>
-          <div className="signup-button">
-            <a href="https://forms.gle/pUeC3qFb2ZLw31Uc8" className="button-link">Sign Up!</a>
-          </div>
+        </div>
+        <div className="hill-gradient" style={{ height: "30vh"}}>
+          <img className="hill_trail" src={hill_trail} alt="hills" style={{width:hills_size}} />
         </div>
       </div>
       <div className="intro">
