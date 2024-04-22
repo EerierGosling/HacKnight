@@ -1,5 +1,7 @@
+@import 'shared-formatting.css';
+
 body {
-  background-color: rgb(28, 33, 48);
+  background-color: var(--background);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,24 +44,24 @@ body {
 }
 
 .tagline {
-  color:#FFF;
+  color:white;
   font-size: 20px;
 }
 
 .time-location {
-  color:#FFF;
+  color:white;
   font-size: 20px;
 }
 
 .info {
-  color:#FFF;
+  color:white;
   font-size: 20px;
 }
 
 .button-link {
   display: inline-block;
   padding: 20px 25px;
-  background-color: rgb(255, 234, 100);
+  background-color: var(--accent-yellow);
   color: rgba(0, 0, 0, 0.702);
   font-size: 30px;
   text-align: center;
@@ -70,7 +72,7 @@ body {
 
 .faq {
   width: 90vh;
-  background-color: #353f5f;
+  background-color: var(--transperent-box);
   padding: 20px;
   border-radius: 25px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -114,6 +116,16 @@ body {
 .sun {
   position: absolute;
   z-index: -2;
+  animation: rotateToggle 20s infinite;
+}
+
+@keyframes rotateToggle {
+  0%, 100% {
+    transform: rotate(0deg); /* Not rotated */
+  }
+  50% {
+    transform: rotate(10deg); /* Rotated by 45 degrees */
+  }
 }
 
 .hills-front {
@@ -138,7 +150,7 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  animation: floatUpDown 6s infinite alternate;
+  animation: floatUpDown 8s infinite;
 }
 
 @keyframes floatUpDown {
@@ -146,7 +158,7 @@ body {
     transform: translateX(0);
   }
   50% {
-    transform: translateX(-10px); /* Adjust the floating distance */
+    transform: translateX(-3vw); /* Adjust the floating distance */
   }
 }
 
@@ -156,7 +168,7 @@ body {
   height: 100vh; /* Adjust the height as needed */
 
   /* Define the gradient */
-  background: linear-gradient(to bottom, rgb(92, 144, 96), rgba(0,0,0,0));
+  background: linear-gradient(to bottom, var(--hill-green), rgba(0,0,0,0));
 }
 
 @media (max-width: 900px) {

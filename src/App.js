@@ -1,11 +1,13 @@
 import hacknight_logo from './assets/hacknight.png';
 import hacknight_text from './assets/logo_text.png';
 import './App.css';
-import Question from './Question'
-import Schedule from './Schedule'
+import Question from './Question';
+import Schedule from './Schedule';
 import questions from './Questions.json';
 import IntroSection from './IntroSection.js'
 import intro_sections from './Intro.json';
+
+import MiddleHills from './MiddleHills.js';
 
 import React, { useState, useEffect } from 'react';
 import sun_image from './assets/sun.png';
@@ -14,6 +16,11 @@ import hills_back from './assets/hills_back.png';
 import hills_between from './assets/hills_between.png';
 import hill_trail from './assets/hill_trail.png';
 import clouds from './assets/clouds.png';
+
+import hill_left_1 from './assets/hills/left/1.png';
+import hill_left_3 from './assets/hills/left/3.png';
+import hill_right_2 from './assets/hills/right/2.png';
+import hill_right_4 from './assets/hills/right/4.png';
 
 function App() {
 
@@ -63,6 +70,12 @@ function App() {
   const hills_size_num = Math.min(viewWidth, viewHeight);
   const hills_size = `${hills_size_num}px`;
 
+  const hill_height = Math.min(viewHeight/1.5, viewWidth/1.5);
+  const hill_width_factor = hill_height/1024;
+
+  const hills_left_width = hill_width_factor*1500;
+  const hills_right_width = hill_width_factor*2000;
+
   const starting_x = .5;
   const starting_y = mobile_view ? Math.max(.12, (1 - (hills_size_num*1.2)/viewHeight)/2) : .05;
 
@@ -74,8 +87,8 @@ function App() {
   const left_padding = `${100*(r_x*(Math.sin(scrollY*5.6))+starting_x)}vw`;
 
 
-  const hills_between_arr = Array.from({ length: Math.ceil(viewWidth/hills_size_num) }, (_, index) => (
-    <img className="hills-back" src={hills_between} alt="hills" style={{height:hills_size, width:hills_size}} key={index} />
+  const middle_hills_arr = Array.from({ length: viewWidth/(hill_width_factor*3000*.8) }, (_, index) => (
+    <MiddleHills hill_height={hill_height} index={index} viewHeight={viewHeight} viewWidth={viewWidth} />
   ));
   
   return (
@@ -90,38 +103,45 @@ function App() {
               }
             </div>
             <img className="clouds" src={clouds} alt="clouds" style={{height:hills_size, width:hills_size, top:`${viewHeight - hills_size_num + (viewWidth > 600 && viewWidth < 900 ? 80 : 0)}px`}} />
-            <div className="hills_back_all" style={{ display: 'flex' }} >
-              {hills_between_arr}
-              <img className="hills-back" src={hills_back} alt="hills" style={{height:hills_size, width:hills_size}} />
-            </div>
-            <img className="hills-front" src={hills_front} alt="hills" style={{height:hills_size, width:hills_size}} />
+            
+            <div className="all-hills" style={{top:`${viewHeight-1024}px`}}>
+              <div className="hill-container">
+                <img className="hill" src={hill_left_1} alt="hills" style={{height:hill_height, width:hills_left_width, zIndex:"-1", top:`${viewHeight-hill_height}px`}}/>
+                <img className="hill" src={hill_left_3} alt="hills" style={{height:hill_height, width:hills_left_width, zIndex:"-3", top:`${viewHeight-hill_height}px` }}/>
+              </div>
+
+              {middle_hills_arr}
+
+              <div className="hill-container">
+                <img className="hill" src={hill_right_2} alt="hills" style={{height:hill_height, width:hills_right_width, zIndex:"-2", top:`${viewHeight-hill_height}px`, left:`${viewWidth-hills_right_width}px`}}/>
+                <img className="hill" src={hill_right_4} alt="hills" style={{height:hill_height, width:hills_right_width, zIndex:"-4", top:`${viewHeight-hill_height}px`, left:`${viewWidth-hills_right_width}px` }}/>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div className="header">
-            <div className="center-content">
-              {/* <img src={hacknight_logo} alt="HacKnight Logo" className="center-image" height="200px"/> */}
-              <img src={hacknight_text} alt="HacKnight" style={{width:`${mobile_view ? 90 : 40 }vw`, transform:"translateX(-1vw)" }} />
-              {console.log(viewWidth)}
-            </div>
-            <p className="time-location">
-              June 1-2, <a href="https://maps.app.goo.gl/yovXzF5TM46DzRep9" target="_blank" style={{color:'yellow'}}>BB&N High School</a>
-            </p>
-            <p className="tagline">
-              free! boston! prizes!
-            </p>
-            <p className="info">
-              info
-            </p>
-            <div className="signup-button">
-              <a href="https://forms.gle/pUeC3qFb2ZLw31Uc8" className="button-link" target="_blank" >Sign Up!</a>
+        <div className="header">
+          <div className="center-content">
+            {/* <img src={hacknight_logo} alt="HacKnight Logo" className="center-image" height="200px"/> */}
+            <img src={hacknight_text} alt="HacKnight" style={{width:`${mobile_view ? 90 : 40 }vw`, transform:"translateX(-1vw)" }} />
+            {console.log(viewWidth)}
           </div>
-
+          <p className="time-location">
+            June 1-2, <a href="https://maps.app.goo.gl/yovXzF5TM46DzRep9" target="_blank" style={{color:'yellow'}}>BB&N High School</a>
+          </p>
+          <p className="tagline">
+            free! boston! prizes!
+          </p>
+          <p className="info">
+            info
+          </p>
+          <div className="signup-button">
+            <a href="https://forms.gle/pUeC3qFb2ZLw31Uc8" className="button-link" target="_blank" >Sign Up!</a>
         </div>
 
-        <div className="hill-gradient" style={{ height: "30vh"}}>
-          <img className="hill_trail" src={hill_trail} alt="hills" style={{width:hills_size}} />
-        </div>
+      </div>
+
+      <div className="hill-gradient" style={{ height: "30vh"}}></div>
       </div>
       <div className="intro">
         {intro_sections.map((section, index) => (
