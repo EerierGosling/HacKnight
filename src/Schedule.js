@@ -22,9 +22,13 @@ function Schedule() {
             <p className="schedule-type" onClick={changeToLearnathon} style={{color: showing_events===events.learnathon ? "rgb(255, 234, 100)" : "white", paddingRight:"30px"}}>Learnathon</p>
             <p className="schedule-type" onClick={changeToHackathon} style={{color: showing_events===events.hackathon ? "rgb(255, 234, 100)" : "white"}}>Hackathon</p>
         </div>
+
+        <p style={{fontSize:"18px", color:"white", fontStyle:"italic"}}>
+          {showing_events === events.learnathon ? "Saturday, June 1" : "Saturday, June 1 (6 PM) — Sunday, June 2 (6 PM)" }
+        </p>
         
         <div className="schedule-content"> {
-          showing_events.map((event) => <Event time={event.time} title={event.title}/>)
+          showing_events.map((event, index) => <Event time={event.time} title={event.title} index={index} />)
         }
         </div>
       </div>

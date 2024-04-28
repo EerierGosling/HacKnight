@@ -1,14 +1,21 @@
-// import './Event.css';
+import './Event.css';
 
-function Event({time, title}) {
+function Event({time, title, index}) {
   return (
-    <div style={{display: 'flex'}}>
-      <p style={{color:'white', fontWeight:'bold', fontSize:"20px", paddingRight:"5px"}}>
-        {time}:
-      </p>
-      <p style={{color:'white', fontSize:"20px"}}>
-        {title}
-      </p>
+    <div>
+      { index != 0 &&
+        <hr></hr>
+      }
+      <div style={{display: 'flex'}}>
+        <div style={{width:120}}>
+          <p style={{color:'white', fontWeight:'bold', fontSize:"20px", paddingRight:"5px"}}>
+            {time}:
+          </p>
+        </div>
+        <p style={{color:'white', fontSize:"20px"}}>
+          {title}
+        </p>
+      </div>
     </div>
   );
 }
