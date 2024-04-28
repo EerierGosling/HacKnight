@@ -91,11 +91,12 @@ function App() {
   
   return (
     <div className="App">
-      {/* {scrollY > .3 &&
-        <div className="nav-bar" style={{background:`rgba(150, 151, 216, ${Math.min((scrollY-.3), .9)})`}}>
-
+      {scrollY > .3 &&
+        <div className="nav-bar" style={{opacity:`${Math.min((window.scrollY/viewHeight-.3)*2, 1)}`, display:"flex"}}>
+          <img src={hacknight_logo} alt="HacKnight Logo" style={{paddingTop:"1vh", paddingLeft:"1vh", height:"8vh", width:"8vh"}}/>
+          <img src={hacknight_text} alt="HacKnight" style={{paddingTop:"1vh", paddingLeft:"1vh", height:"8vh"}} />
         </div>
-      } */}
+      }
       <div className="sunset-full">
         <div className="sunset-top">
 
@@ -126,7 +127,6 @@ function App() {
 
         <div className="header">
           <div className="center-content">
-            {/* <img src={hacknight_logo} alt="HacKnight Logo" className="center-image" height="200px"/> */}
             <img src={hacknight_text} alt="HacKnight" style={{width:`${mobile_view ? 90 : 40 }vw`, transform:"translateX(-1vw)" }} />
             {console.log(viewWidth)}
           </div>
