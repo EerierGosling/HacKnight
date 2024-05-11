@@ -5,19 +5,24 @@ import hill_3 from './assets/hills/middle/3.png';
 import hill_4 from './assets/hills/middle/4.png';
 import React, {  } from 'react';
 
-function MiddleHills({hill_height, index, viewHeight, viewWidth, hillHeightTotal}) {
+function MiddleHills({hill_height, index, viewHeight, viewWidth, scrollY, transform_left, transform_right, transform_down}) {
+
+
 
   const width = 3000*hill_height/1024;
 
   const top = `${viewHeight-hill_height}px`;
-  const left = `${viewWidth - width*(index*.8 + 1.4)}px`;
+  const left_num = viewWidth - width*(index*.8 + 1.4);
+  const left = `${left_num}px`;
+
+  const transform = left_num+(width/2) < viewWidth/2 ? transform_left : transform_right;
 
   return (
     <div className="all-hills-middle" style={{height:hill_height, width:width}} >
-      <img className="hill" src={hill_1} alt="hills" style={{height:hillHeightTotal, width:width, zIndex:"-3", top: top, left: left }}/>
-      <img className="hill" src={hill_2} alt="hills" style={{height:hillHeightTotal, width:width, zIndex:"-5", top: top, left: left }}/>
-      <img className="hill" src={hill_3} alt="hills" style={{height:hillHeightTotal, width:width, zIndex:"-7", top: top, left: left }}/>
-      <img className="hill" src={hill_4} alt="hills" style={{height:hillHeightTotal, width:width, zIndex:"-9", top: top, left: left }}/>
+      <img className="hill" src={hill_1} alt="hills" style={{height:hill_height, width:width, zIndex:"-1", top: top, left: left, position:'fixed', transform:`${transform} ${transform_down}` }}/>
+      <img className="hill" src={hill_2} alt="hills" style={{height:hill_height, width:width, zIndex:"-2", top: top, left: left, position:'fixed', transform:`${transform} ${transform_down}` }}/>
+      <img className="hill" src={hill_3} alt="hills" style={{height:hill_height, width:width, zIndex:"-3", top: top, left: left, position:'fixed', transform:`${transform} ${transform_down}` }}/>
+      <img className="hill" src={hill_4} alt="hills" style={{height:hill_height, width:width, zIndex:"-4", top: top, left: left, position:'fixed', transform:`${transform} ${transform_down}` }}/>
     </div>
   );
 }

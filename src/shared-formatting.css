@@ -2,7 +2,7 @@
     --background-light: rgb(167, 220, 255);
     --background: rgb(28, 33, 48);
     --accent-yellow: rgb(255, 234, 100);
-    --accent-blue: rgb(100, 221, 255); /* fix this */
+    --accent-blue: #64ddff; /* fix this */
     --transperent-box: rgba(150, 151, 216, 0.384);
     --hill-green: rgb(92, 144, 96);
 
