@@ -81,10 +81,10 @@ function App() {
   const top_padding = `${top_padding_num}vh`;
   const left_padding = `${100*(r_x*(Math.sin(scrollY*5.6))+starting_x)}vw`;
 
-  const transform_left = `translateX(calc(-100vw*${scrollY}))`;
-  const transform_right = `translateX(calc(100vw*${scrollY}))`;
+  const transform_left = `translateX(calc(-100vw*${Math.max(scrollY,0)}))`;
+  const transform_right = `translateX(calc(100vw*${Math.max(scrollY,0)}))`;
 
-  const transform_down = `translateY(${hill_height*scrollY}px)`;
+  const transform_down = `translateY(${hill_height*Math.max(scrollY,0)}px)`;
 
 
 
