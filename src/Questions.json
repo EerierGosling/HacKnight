@@ -1,12 +1,42 @@
 [
-    {"question": "What's a learnathon?", "answer":"During the learnathon, you will be able to participate in one or two computer science-related workshops lead by BB&N students. The workshops are project-based, and you will walk away with new knowledge and a project you have made."},
-    {"question": "What's a hackathon?", "answer":"A coding marathon! Participants will come together to build cool projects in a short period of time and share them with each other—however fun, wacky, or Nobel Prize-winning. If you came to the learnathon, this would be a great time to apply your new-learned knowledge!"},
-    {"question": "Am I eligible?", "answer": "HacKnight is geared for 8th-12th graders. You must be between 13-19 years old to participate."},
-    {"question": "Does this cost money?", "answer":"No, everything is totally free!"},
-    {"question": "What should I bring?", "answer":"A laptop, charger, a sleeping bag if you're staying overnight, and most importantly, yourself! We will provide food, games, and other swag."},
-    {"question": "What if I don't know how to code?", "answer":"That's totally fine! Our events are for people of all experience levels. Join us on Saturday during the learnathon and participate in workshops to learn new skills, or learn as you go during the hackathon."},
-    {"question": "Do I need a team?", "answer":"You can come by yourself or with a team. If you don't have a team, you can form a team day-of with other participants. You can even participate by yourself if you choose to."},
-    {"question": "What's the max size for a team?", "answer":"While there is no hard cap, we encourage teams of up to 4 people. Our prizes will be designed for teams of 4."},
-    {"question": "Do I have to stay overnight?", "answer": "No, but you can! Our hackathon has two tracks: an overnight track and a day track. You can come the night before and get 24 hours to work on cool stuff, or you can join us day-of and hack for 9 hours."},
-    {"question": "What if I have more questions?", "answer":"Feel free to email us at insertemail@bbns.org"}
+    {
+        "question": "What's a learnathon?",
+        "answer": "During the learnathon, you will be able to participate in one or two computer science-related workshops lead by BB&N students. The workshops are project-based, and you will walk away with new knowledge and a project you have made."
+    },
+    {
+        "question": "What's a hackathon?",
+        "answer": "A coding marathon! Participants will come together to build cool projects in a short period of time and share them with each other—however fun, wacky, or Nobel Prize-winning. If you came to the learnathon, this would be a great time to apply your new-learned knowledge!"
+    },
+    {
+        "question": "Am I eligible?",
+        "answer": "HacKnight is geared for 8th-12th graders. You must be between 13-19 years old to participate."
+    },
+    {
+        "question": "Does this cost money?",
+        "answer": "No, everything is totally free!"
+    },
+    {
+        "question": "What should I bring?",
+        "answer": "A laptop, charger, a sleeping bag if you're staying overnight, and most importantly, yourself! We will provide food, games, and other swag."
+    },
+    {
+        "question": "What if I don't know how to code?",
+        "answer": "That's totally fine! Our events are for people of all experience levels. Join us on Saturday during the learnathon and participate in workshops to learn new skills, or learn as you go during the hackathon."
+    },
+    {
+        "question": "Do I need a team?",
+        "answer": "You can come by yourself or with a team. If you don't have a team, you can form a team day-of with other participants. You can even participate by yourself if you choose to."
+    },
+    {
+        "question": "What's the max size for a team?",
+        "answer": "While there is no hard cap, we encourage teams of up to 4 people. Our prizes will be designed for teams of 4."
+    },
+    {
+        "question": "Do I have to stay overnight?",
+        "answer": "No, but you can! Our hackathon has two tracks: an overnight track and a day track. You can come the night before and get 24 hours to work on cool stuff, or you can join us day-of and hack for 9 hours."
+    },
+    {
+        "question": "What if I have more questions?",
+        "answer": "Feel free to email us at insertemail@bbns.org"
+    }
 ]
