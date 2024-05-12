@@ -40,7 +40,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY/viewHeight);
+      setScrollY(Math.max(window.scrollY/viewHeight, 0));
       document.body.style.backgroundColor = getColor(scrollY);
     };
 
@@ -150,7 +150,7 @@ function App() {
       <div className="site-content" style={{zIndex:"-5"}}>
         <div className="intro">
 
-          <div style={{width:column_width, paddingBottom:"40px"}}>
+          <div style={{width:column_width+300, paddingBottom:"40px"}}>
 
             <p style={{fontSize: "35px", color: "white", fontWeight: "bold", paddingBottom:"10px"}}>
               HacKnight has two parts: <br></br>
@@ -170,7 +170,7 @@ function App() {
 
 
           {intro_sections.map((section, index) => (
-            <IntroSection key={section.id} image={require(`${section.image}`)} text={section.text} index={index} column_width={column_width} />
+            <IntroSection key={section.id} image={require(`${section.image}`)} title={section.title} text={section.text} index={index} column_width={column_width} />
           ))}
         </div>
 
@@ -182,9 +182,11 @@ function App() {
           </p>
           {questions.map((question) => <Question key={question.id} question={question.question} answer={question.answer}/>)}
         </div>
-        <p style={{color:"white", fontSize:"20px"}}>
-          Are your parents worried? Check out our <a href="https://docs.google.com/document/d/153dYEuwn99BKUlF328-Ua3jw0sY1UDIEqdfRUL9dRaQ/edit?usp=sharing/preview" target="_blank" rel="noreferrer" style={{color:"yellow"}}>Parent's Guide</a>!
-        </p>
+        <div style={{display:"flex", alignItems:"center", justifyContent: "center"}}>
+          <p style={{color:"white", fontSize:"20px"}}>
+            Are your parents worried? Check out our <a href="https://docs.google.com/document/d/153dYEuwn99BKUlF328-Ua3jw0sY1UDIEqdfRUL9dRaQ/edit?usp=sharing/preview" target="_blank" rel="noreferrer" style={{color:"yellow"}}>Parent's Guide</a>!
+          </p>
+        </div>
         <div className="footer" style={{paddingBottom:"10px"}}>
           <a href="https://bbns.org" target="_blank" rel="noreferrer">
             <img src="https://www.bbns.org/wp-content/uploads/2023/08/BBandN_logo-white.svg" className="bottom-logo" alt="BB&N Logo" height="100px"/>

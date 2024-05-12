@@ -98,6 +98,18 @@ body {
   text-align: left;
 }
 
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left:50px;
+  padding-right:50px;
+
+  text-align: left;
+}
+
+
 .footer {
   display: flex;
   justify-content: center;

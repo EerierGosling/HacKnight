@@ -1,4 +1,4 @@
 [
-    {"image": "./assets/hacknight.png", "text": "<- imagine thats a drawing of a knight doing something fun and this is interesting info about what you could do at a hackathon"},
-    {"image": "./assets/hacknight.png", "text": "and another one"}
+    {"image": "./assets/hacknight.png", "title":"thing 1", "text": "<- imagine thats a drawing of a knight doing something fun and this is interesting info about what you could do at a hackathon"},
+    {"image": "./assets/hacknight.png", "title":"thing 2", "text": "and another one"}
 ]
