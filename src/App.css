@@ -12,10 +12,13 @@ body {
   flex-direction: column; 
   align-items: center; 
   justify-content: start;
-  width: 100%;
+  width: 100vw;
   margin-top: 0;
   padding-top: 0;
   overflow: hidden;
+  background-image:url("assets/stars.png");
+  background-size: 500px 500px;
+  background-repeat: repeat;
 }
 
 .nav-bar {
