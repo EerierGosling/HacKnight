@@ -115,7 +115,7 @@ function App() {
         </div>
 
         <div className="signup-button">
-          <a href="https://forms.gle/pUeC3qFb2ZLw31Uc8" className="button-link-nav" target="_blank" rel="noreferrer">Sign Up!</a>
+          <a href="https://forms.gle/L2C46Revq5iZjhdQ8" className="button-link-nav" target="_blank" rel="noreferrer">Sign Up!</a>
         </div>
       </div>
 
@@ -155,7 +155,7 @@ function App() {
                 Come for free, and compete for prizes!
               </p>
               <div className="signup-button">
-                <a href="https://forms.gle/pUeC3qFb2ZLw31Uc8" className="button-link" target="_blank" rel="noreferrer">Sign Up!</a>
+                <a href="https://forms.gle/L2C46Revq5iZjhdQ8" className="button-link" target="_blank" rel="noreferrer">Sign Up!</a>
               </div>
             </div>
           }

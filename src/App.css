@@ -159,16 +159,6 @@ body {
 .moon {
   position: fixed;
   z-index: -8;
-  animation: rotateToggle 20s infinite;
-}
-
-@keyframes rotateToggle {
-  0%, 100% {
-    transform: rotate(0deg); /* Not rotated */
-  }
-  50% {
-    transform: rotate(10deg); /* Rotated by 45 degrees */
-  }
 }
 
 .clouds {
