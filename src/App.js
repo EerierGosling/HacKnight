@@ -96,12 +96,11 @@ function App() {
   
   return (
     <div className="App">
-      {scrollY > 1000000 &&
-        <div className="nav-bar" style={{opacity:`${Math.min((window.scrollY/viewHeight-.3)*2, 1)}`, display:"flex"}}>
-          <img src={hacknight_logo} alt="HacKnight Logo" style={{paddingTop:"1vh", paddingLeft:"1vh", height:"8vh", width:"8vh"}}/>
-          <img src={hacknight_text} alt="HacKnight" style={{paddingTop:"1vh", paddingLeft:"1vh", height:"8vh"}} />
-        </div>
-      }
+
+      <div className="nav-bar" style={{opacity:`${Math.min((window.scrollY/viewHeight-.3)*2, 1)}`, display:"flex", position:"fixed"}}>
+        <img src={hacknight_logo} alt="HacKnight Logo" style={{paddingTop:"1vh", paddingLeft:"1vh", height:"8vh", width:"8vh"}}/>
+        <img src={hacknight_text} alt="HacKnight" style={{paddingTop:"1vh", paddingLeft:"1vh", height:"8vh"}} />
+      </div>
 
       {scrollY <= 1 &&
         <div className="sunset-full">
