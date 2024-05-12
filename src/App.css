@@ -68,6 +68,19 @@ body {
   font-size: 20px;
 }
 
+.button-link-nav {
+  display: inline-block;
+  padding: 15px 20px;
+  background-color: var(--accent-yellow);
+  color: rgba(0, 0, 0, 0.702);
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
 .button-link {
   display: inline-block;
   padding: 20px 25px;

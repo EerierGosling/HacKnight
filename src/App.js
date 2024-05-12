@@ -41,7 +41,9 @@ function App() {
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(Math.max(window.scrollY/viewHeight, 0));
-      document.body.style.backgroundColor = getColor(scrollY);
+      // document.body.style.backgroundColor = getColor(scrollY);
+
+      console.log(scrollY);
     };
 
     const handleResize = () => {
@@ -74,17 +76,23 @@ function App() {
   const starting_x = .5;
   const starting_y = mobile_view ? Math.max(.12, (1 - (hills_size*1.2)/viewHeight)/2) : .05;
 
-  const r_x = 1-starting_x;
+  const r_x = 1.2*(1-starting_x);
   const r_y = 1-starting_y;
 
-  const top_padding_num = 100*(r_y*(-Math.cos(scrollY*5.6))+(starting_y+1));
+  const top_padding_num = 100*(r_y*(-Math.cos(scrollY*1.5))+(starting_y+1));
   const top_padding = `${top_padding_num}vh`;
-  const left_padding = `${100*(r_x*(Math.sin(scrollY*5.6))+starting_x)}vw`;
+  const left_padding = `${100*(r_x*(Math.sin(scrollY*1.5))+starting_x)}vw`;
 
-  const transform_left = `translateX(calc(-100vw*${Math.max(scrollY,0)}))`;
-  const transform_right = `translateX(calc(100vw*${Math.max(scrollY,0)}))`;
+  const scroll_freeze = Math.min(scrollY, .72);
 
-  const transform_down = `translateY(${hill_height*Math.max(scrollY,0)}px)`;
+  // const top_padding_num_moon = 100*(.5*(-Math.sin(scroll_freeze*2))+.65);
+  // const top_padding_moon = `${top_padding_num_moon}vh`;
+  // const left_padding_moon = `${100*(1.2*(-Math.cos(scroll_freeze*2))+1)}vw`;
+
+  const transform_left = `translateX(calc(-100vw*${Math.max(scrollY*.4, 0)}))`;
+  const transform_right = `translateX(calc(100vw*${Math.max(scrollY*.4, 0)}))`;
+
+  const transform_down = `translateY(${hill_height*Math.max(scrollY*.4,0)}px)`;
 
   const column_width = `${Math.min(window.innerWidth-200, 800)}px`;
 
@@ -97,19 +105,28 @@ function App() {
   return (
     <div className="App">
 
-      <div className="nav-bar" style={{opacity:`${Math.min((window.scrollY/viewHeight-.3)*2, 1)}`, display:"flex", position:"fixed"}}>
-        <img src={hacknight_logo} alt="HacKnight Logo" style={{paddingTop:"1vh", paddingLeft:"1vh", height:"8vh", width:"8vh"}}/>
-        <img src={hacknight_text} alt="HacKnight" style={{paddingTop:"1vh", paddingLeft:"1vh", height:"8vh"}} />
+      <div className="nav-bar" style={{opacity:`${Math.min((window.scrollY/viewHeight-.3)*2, 1)}`, display:"flex", position:"fixed", justifyContent: "space-between", alignItems: "center"}}>
+        <div>
+          <img src={hacknight_logo} alt="HacKnight Logo" style={{paddingLeft:"1vh", height:"8vh", width:"8vh"}}/>
+          {!mobile_view &&
+            <img src={hacknight_text} alt="HacKnight" style={{paddingLeft:"1vh", height:"8vh"}} />
+          }
+        </div>
+
+        <div className="signup-button">
+          <a href="https://forms.gle/pUeC3qFb2ZLw31Uc8" className="button-link-nav" target="_blank" rel="noreferrer">Sign Up!</a>
+        </div>
       </div>
 
       {scrollY <= 1 &&
         <div className="sunset-full">
           <div className="sunset">
             <div className="image-container">
-              {scrollY < .5 &&
+              {scrollY < 1 &&
                 <img className="sun" src={sun_image} alt="sun" style={{ top: top_padding, left: left_padding, height:`${Math.min(viewHeight*.2, viewWidth*.2)}px`}} />
               }
             </div>
+
             <img className="clouds" src={clouds} alt="clouds" style={{height:hills_size, width:hills_size, top:`${viewHeight - hills_size + (viewWidth > 600 && viewWidth < 900 ? 80 : 0)}px`, transform: transform_right}} />
             
             <div className="all-hills" style={{top:`${viewHeight-1024}px`}}>
@@ -144,6 +161,11 @@ function App() {
         
         </div>
       }
+
+      {/* <div className="image-container" style={{position:"fixed", xIndex:-100}}>
+        <img className="sun" src={sun_image} alt="moon" style={{ top: top_padding_moon, left: left_padding_moon, height:`${Math.min(viewHeight*.2, viewWidth*.2)}px`}} />
+      </div> */}
+
       <div style={{height:viewHeight}}></div>
 
       <div className="site-content" style={{zIndex:"-5"}}>
