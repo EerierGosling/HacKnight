@@ -9,7 +9,7 @@ import intro_sections from './Intro.json';
 
 import MiddleHills from './MiddleHills.js';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import sun_image from './assets/sun.png';
 import moon_image from './assets/moon.png';
 import clouds from './assets/clouds.png';
@@ -38,13 +38,45 @@ function App() {
   const [scrollY, setScrollY] = useState(0);
   const [viewWidth, setViewWidth] = useState();
   const [viewHeight, setViewHeight] = useState();
+  const autoScrollRef = useRef(null);
+
+  const scrollInterval = 50;
+  const scrollStep = 1000;
+
+
+  const handleUserScroll = () => {
+    if (autoScrollRef.current) {
+        clearInterval(autoScrollRef.current);
+        autoScrollRef.current = null;
+    }
+    const newScrollY = window.scrollY;
+    if (newScrollY !== scrollY) {
+        setScrollY(newScrollY);
+    }
+  };
+
+
+  const startAutoScroll = () => {
+    console.log("running!");
+    if (!autoScrollRef.current) {
+        autoScrollRef.current = setInterval(() => {
+            if (scrollY >= 1) {  // Stop scrolling when scrollY reaches or exceeds 1
+                clearInterval(autoScrollRef.current);
+                autoScrollRef.current = null;
+            } else {
+                window.scrollBy(0, scrollStep); // Scrolls vertically by 'scrollStep' pixels
+            }
+        }, scrollInterval);
+    }
+  };
+
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(Math.max(window.scrollY/viewHeight, 0));
-      // document.body.style.backgroundColor = getColor(scrollY);
+      setupInactivityTimeout();
 
-      console.log(scrollY);
+      // document.body.style.backgroundColor = getColor(scrollY);
     };
 
     const handleResize = () => {
@@ -52,8 +84,16 @@ function App() {
       setViewHeight(window.innerHeight);
     };
 
+    const setupInactivityTimeout = () => {
+      clearTimeout(autoScrollRef.current);  // Clear any existing timeouts
+      autoScrollRef.current = setTimeout(() => {
+          startAutoScroll();
+      }, 10000);  // 10 seconds of inactivity
+    };
+
     handleScroll();
     handleResize();
+    setupInactivityTimeout();
 
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
@@ -86,14 +126,10 @@ function App() {
 
   const scroll_freeze = Math.min(scrollY, .72);
 
-  // const top_padding_num_moon = 100*(.5*(-Math.sin(scroll_freeze*2))+.65);
-  // const top_padding_moon = `${top_padding_num_moon}vh`;
-  // const left_padding_moon = `${100*(1.2*(-Math.cos(scroll_freeze*2))+1)}vw`;
+  const transform_left = `translateX(calc(-100vw*${Math.max(scrollY*.5, 0)}))`;
+  const transform_right = `translateX(calc(100vw*${Math.max(scrollY*.5, 0)}))`;
 
-  const transform_left = `translateX(calc(-100vw*${Math.max(scrollY*.4, 0)}))`;
-  const transform_right = `translateX(calc(100vw*${Math.max(scrollY*.4, 0)}))`;
-
-  const transform_down = `translateY(${hill_height*Math.max(scrollY*.4,0)}px)`;
+  const transform_down = `translateY(${hill_height*Math.max(scrollY*.5, 0)}px)`;
 
   const column_width = `${Math.min(window.innerWidth-200, 800)}px`;
 
@@ -146,7 +182,6 @@ function App() {
             <div className="header" style={{opacity:Math.max(1-scrollY*2, 0)}}>
               <div className="center-content">
                 <img src={hacknight_text} alt="HacKnight" style={{width:`${mobile_view ? 90 : 40 }vw`, transform:"translateX(-1vw)" }} />
-                {console.log(viewWidth)}
               </div>
               <p className="time-location">
                 June 1-2, <a href="https://maps.app.goo.gl/yovXzF5TM46DzRep9" target="_blank" rel="noreferrer" style={{color:'yellow'}}>BB&N High School</a>
@@ -162,10 +197,6 @@ function App() {
         
         </div>
       }
-
-      {/* <div className="image-container" style={{position:"fixed", xIndex:-100}}>
-        <img className="sun" src={sun_image} alt="moon" style={{ top: top_padding_moon, left: left_padding_moon, height:`${Math.min(viewHeight*.2, viewWidth*.2)}px`}} />
-      </div> */}
 
       <div style={{height:viewHeight}}></div>
 
@@ -186,7 +217,7 @@ function App() {
 
             <p style={{fontSize: "25px", color: "white", width:column_width, paddingLeft:"30px"}}>
               During the <span className="accent-text">Hackathon</span>, you can come <b>build your own project</b> and compete to <b>win prizes</b>!
-              <p style={{fontSize:"20px", color:"rgba(255, 255, 255, 0.7)"}}>You have the option to hack for 24 hours, (the overnight hackathon) or 9 (the non-overnight hackathon).</p>
+              <p style={{fontSize:"20px", color:"rgba(255, 255, 255, 0.7)"}}>You have the option to hack for 24 hours, (the overnight hackathon) or 9 (the day hackathon).</p>
             </p>
           </div>
 
