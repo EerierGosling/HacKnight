@@ -7,7 +7,6 @@ function Question({question, answer}) {
 
   function toggleDropdown() {
     setShowing(!showing);
-    console.log("anything");
   }
 
   return (
