@@ -74,7 +74,7 @@ function App() {
   const starting_x = .5;
   const starting_y = mobile_view ? Math.max(.12, (1 - (hills_size*1.2)/viewHeight)/2) : .05;
 
-  const r_x = .9-starting_x;
+  const r_x = 1-starting_x;
   const r_y = 1-starting_y;
 
   const top_padding_num = 100*(r_y*(-Math.cos(scrollY*5.6))+(starting_y+1));
@@ -85,6 +85,8 @@ function App() {
   const transform_right = `translateX(calc(100vw*${Math.max(scrollY,0)}))`;
 
   const transform_down = `translateY(${hill_height*Math.max(scrollY,0)}px)`;
+
+  const column_width = `${Math.min(window.innerWidth-200, 800)}px`;
 
 
 
@@ -100,10 +102,10 @@ function App() {
           <img src={hacknight_text} alt="HacKnight" style={{paddingTop:"1vh", paddingLeft:"1vh", height:"8vh"}} />
         </div>
       }
-      <div className="sunset-full">
-        <div className="sunset-top">
 
-          <div className="background">
+      {scrollY <= 1 &&
+        <div className="sunset-full">
+          <div className="sunset">
             <div className="image-container">
               {scrollY < .5 &&
                 <img className="sun" src={sun_image} alt="sun" style={{ top: top_padding, left: left_padding, height:`${Math.min(viewHeight*.2, viewWidth*.2)}px`}} />
@@ -112,53 +114,69 @@ function App() {
             <img className="clouds" src={clouds} alt="clouds" style={{height:hills_size, width:hills_size, top:`${viewHeight - hills_size + (viewWidth > 600 && viewWidth < 900 ? 80 : 0)}px`, transform: transform_right}} />
             
             <div className="all-hills" style={{top:`${viewHeight-1024}px`}}>
-              <div className="hill-container right">
-                <img className="hill" src={hill_left_1} alt="hills" style={{height:hill_height, width:hills_left_width, zIndex:"-1", top:`${viewHeight-hill_height}px`, position:'fixed', transform: `${transform_left} ${transform_down}`}}/>
-                <img className="hill" src={hill_left_3} alt="hills" style={{height:hill_height, width:hills_left_width, zIndex:"-3", top:`${viewHeight-hill_height}px`, position:'fixed', transform: `${transform_left} ${transform_down}`}}/>
-              </div>
-
+              <img className="hill" src={hill_left_1} alt="hills" style={{height:hill_height, width:hills_left_width, zIndex:"-1", top:`${viewHeight-hill_height}px`, left:0, transform: `${transform_left} ${transform_down}`}}/>
+              <img className="hill" src={hill_left_3} alt="hills" style={{height:hill_height, width:hills_left_width, zIndex:"-3", top:`${viewHeight-hill_height}px`, left:0, transform: `${transform_left} ${transform_down}`}}/>
+              
               {middle_hills_arr}
+              
+              <img className="hill" src={hill_right_2} alt="hills" style={{height:hill_height, width:hills_right_width, zIndex:"-2", top:`${viewHeight-hill_height}px`, left:`${viewWidth-hills_right_width}px`, transform: `${transform_right} ${transform_down}`}}/>
+              <img className="hill" src={hill_right_4} alt="hills" style={{height:hill_height, width:hills_right_width, zIndex:"-4", top:`${viewHeight-hill_height}px`, left:`${viewWidth-hills_right_width}px`, transform: `${transform_right} ${transform_down}`}}/>
 
-              <div className="hill-container left">
-                <img className="hill" src={hill_right_2} alt="hills" style={{height:hill_height, width:hills_right_width, zIndex:"-2", top:`${viewHeight-hill_height}px`, left:`${viewWidth-hills_right_width}px`, position:'fixed', transform: `${transform_right} ${transform_down}`}}/>
-                <img className="hill" src={hill_right_4} alt="hills" style={{height:hill_height, width:hills_right_width, zIndex:"-4", top:`${viewHeight-hill_height}px`, left:`${viewWidth-hills_right_width}px`, position:'fixed', transform: `${transform_right} ${transform_down}`}}/>
-              </div>
             </div>
           </div>
+          
+          {1-scrollY*2 > 0 &&
+            <div className="header" style={{opacity:Math.max(1-scrollY*2, 0)}}>
+              <div className="center-content">
+                <img src={hacknight_text} alt="HacKnight" style={{width:`${mobile_view ? 90 : 40 }vw`, transform:"translateX(-1vw)" }} />
+                {console.log(viewWidth)}
+              </div>
+              <p className="time-location">
+                June 1-2, <a href="https://maps.app.goo.gl/yovXzF5TM46DzRep9" target="_blank" rel="noreferrer" style={{color:'yellow'}}>BB&N High School</a>
+              </p>
+              <p className="tagline">
+                Come for free, and compete for prizes!
+              </p>
+              <div className="signup-button">
+                <a href="https://forms.gle/pUeC3qFb2ZLw31Uc8" className="button-link" target="_blank" rel="noreferrer">Sign Up!</a>
+              </div>
+            </div>
+          }
+        
         </div>
-
-        <div className="header" style={{opacity:Math.max(1-scrollY*2, 0)}}>
-          <div className="center-content">
-            <img src={hacknight_text} alt="HacKnight" style={{width:`${mobile_view ? 90 : 40 }vw`, transform:"translateX(-1vw)" }} />
-            {console.log(viewWidth)}
-          </div>
-          <p className="time-location">
-            June 1-2, <a href="https://maps.app.goo.gl/yovXzF5TM46DzRep9" target="_blank" rel="noreferrer" style={{color:'yellow'}}>BB&N High School</a>
-          </p>
-          <p className="tagline">
-            free! boston! prizes!
-          </p>
-          <p className="info">
-            info
-          </p>
-          <div className="signup-button">
-            <a href="https://forms.gle/pUeC3qFb2ZLw31Uc8" className="button-link" target="_blank" rel="noreferrer">Sign Up!</a>
-        </div>
-
-      </div>
-      
-      </div>
+      }
+      <div style={{height:viewHeight}}></div>
 
       <div className="site-content" style={{zIndex:"-5"}}>
         <div className="intro">
+
+          <div style={{width:column_width, paddingBottom:"40px"}}>
+
+            <p style={{fontSize: "35px", color: "white", fontWeight: "bold", paddingBottom:"10px"}}>
+              HacKnight has two parts: <br></br>
+              The <span className="accent-text">Learnathon</span> and the <span className="accent-text">Hackathon</span>.
+            </p>
+
+
+            <p style={{fontSize: "25px", color: "white", width:column_width, paddingLeft:"30px"}}>
+              During the <span className="accent-text">Learnathon</span>, you can come to <b>workshops</b> hosted by BB&N students, <b>learn new skills</b>, and talk to guest speakers!
+            </p>
+
+            <p style={{fontSize: "25px", color: "white", width:column_width, paddingLeft:"30px"}}>
+              During the <span className="accent-text">Hackathon</span>, you can come <b>build your own project</b> and compete to <b>win prizes</b>!
+              <p style={{fontSize:"20px", color:"rgba(255, 255, 255, 0.7)"}}>You have the option to hack for 24 hours, (the overnight hackathon) or 9 (the non-overnight hackathon).</p>
+            </p>
+          </div>
+
+
           {intro_sections.map((section, index) => (
-            <IntroSection key={section.id} image={require(`${section.image}`)} text={section.text} index={index} />
+            <IntroSection key={section.id} image={require(`${section.image}`)} text={section.text} index={index} column_width={column_width} />
           ))}
         </div>
 
-        <Schedule/>
+        <Schedule colunm_width={column_width}/>
 
-        <div className="faq" style={{width:`${Math.min(window.innerWidth-150, 800)}px`}}>
+        <div className="faq" style={{width:column_width}}>
           <p className="schedule-title" style={{fontSize:"25px", color:"white", fontWeight:"bold"}}>
             FAQ
           </p>

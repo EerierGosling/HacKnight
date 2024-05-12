@@ -9,7 +9,6 @@ body {
 }
 
 .App {
-  display: flex;
   flex-direction: column; 
   align-items: center; 
   justify-content: start;
@@ -82,7 +81,7 @@ body {
 }
 
 .faq {
-  width: 90vh;
+  width: 90vw;
   background-color: var(--transperent-box);
   padding: 20px;
   border-radius: 25px;
@@ -93,6 +92,7 @@ body {
   align-items: left;
   justify-content: center;
   padding-left:50px;
+  padding-right:50px;
 
   margin: 20px auto;
   text-align: left;
@@ -108,6 +108,13 @@ body {
   padding:20px
 }
 
+
+
+.accent-text {
+  color:var(--accent-yellow);
+  font-weight:bold;
+}
+
 .background {
   position: absolute;
   top: 0;
@@ -117,11 +124,11 @@ body {
   z-index:-1;
 }
 
-.sunset-top {
+.sunset {
   display: flex;
   height: 100vh;
   width: 100vw;
-  position: relative;
+  position: fixed;
 }
 
 .sun {

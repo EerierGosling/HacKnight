@@ -1,23 +1,26 @@
 @import 'shared-formatting.css';
 
-.schedule-container {
+/*  */
 
-    width: 80vw; /* Adjust the width as needed */
-    background-color: var(--transperent-box); /* Background color of the rectangle */
-    padding: 20px; /* Space between the contents and the rectangle's edges */
-    border-radius: 25px; /* Adjust to get the desired roundness of corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds a shadow for depth */
-  
-    /* Centering the content inside the rectangle */
+
+.schedule-container {
+    width: 90vw;
+    background-color: var(--transperent-box);
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
     display: flex;
     flex-direction: column;
     align-items: left;
     justify-content: center;
     padding-left:50px;
-  
-    /* Other optional styles for appearance */ /* Adds margin around the rectangle */
-    text-align: left; /* Aligns text in the center, if needed */
-  }
+    padding-right:50px;
+
+    margin: 20px auto;
+    text-align: left;
+}
+
 
 .schedule-type {
     color:white;

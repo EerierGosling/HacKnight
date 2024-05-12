@@ -17,12 +17,14 @@ function MiddleHills({hill_height, index, viewHeight, viewWidth, scrollY, transf
 
   const transform = left_num+(width/2) < viewWidth/2 ? transform_left : transform_right;
 
+  const full_transform = `${transform} ${transform_down}`;
+
   return (
     <div className="all-hills-middle" style={{height:hill_height, width:width}} >
-      <img className="hill" src={hill_1} alt="hills" style={{height:hill_height, width:width, zIndex:"-1", top: top, left: left, position:'fixed', transform:`${transform} ${transform_down}` }}/>
-      <img className="hill" src={hill_2} alt="hills" style={{height:hill_height, width:width, zIndex:"-2", top: top, left: left, position:'fixed', transform:`${transform} ${transform_down}` }}/>
-      <img className="hill" src={hill_3} alt="hills" style={{height:hill_height, width:width, zIndex:"-3", top: top, left: left, position:'fixed', transform:`${transform} ${transform_down}` }}/>
-      <img className="hill" src={hill_4} alt="hills" style={{height:hill_height, width:width, zIndex:"-4", top: top, left: left, position:'fixed', transform:`${transform} ${transform_down}` }}/>
+      <img className="hill" src={hill_1} alt="hills" style={{height:hill_height, width:width, zIndex:"-1", top: top, left: left, transform:full_transform }}/>
+      <img className="hill" src={hill_2} alt="hills" style={{height:hill_height, width:width, zIndex:"-2", top: top, left: left, transform:full_transform }}/>
+      <img className="hill" src={hill_3} alt="hills" style={{height:hill_height, width:width, zIndex:"-3", top: top, left: left, transform:full_transform }}/>
+      <img className="hill" src={hill_4} alt="hills" style={{height:hill_height, width:width, zIndex:"-4", top: top, left: left, transform:full_transform }}/>
     </div>
   );
 }
