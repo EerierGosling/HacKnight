@@ -11,6 +11,7 @@ import MiddleHills from './MiddleHills.js';
 
 import React, { useState, useEffect } from 'react';
 import sun_image from './assets/sun.png';
+import moon_image from './assets/moon.png';
 import clouds from './assets/clouds.png';
 
 import hill_left_1 from './assets/hills/left/1.png';
@@ -123,7 +124,7 @@ function App() {
           <div className="sunset">
             <div className="image-container">
               {scrollY < 1 &&
-                <img className="sun" src={sun_image} alt="sun" style={{ top: top_padding, left: left_padding, height:`${Math.min(viewHeight*.2, viewWidth*.2)}px`}} />
+                <img className="moon" src={moon_image} alt="moon" style={{ top: top_padding, left: left_padding, height:`${Math.min(viewHeight*.2, viewWidth*.2)}px`}} />
               }
             </div>
 
