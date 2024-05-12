@@ -18,7 +18,7 @@ function Schedule() {
         <p className="schedule-title" style={{fontSize:"40px", color:"white", fontWeight:"bold"}}>
           Schedule
         </p>
-        <div style={{display: 'flex'}}>
+        <div className="schedule-options" style={{display: 'flex'}}>
             <p className="schedule-type" onClick={changeToLearnathon} style={{color: showing_events===events.learnathon ? "rgb(255, 234, 100)" : "white", paddingRight:"30px"}}>Learnathon</p>
             <p className="schedule-type" onClick={changeToHackathon} style={{color: showing_events===events.hackathon ? "rgb(255, 234, 100)" : "white"}}>Hackathon</p>
         </div>
