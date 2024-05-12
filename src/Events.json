@@ -9,7 +9,7 @@
     "hackathon": [
         { "time": "6 PM", "title": "Opening Ceremony" },
         { "time": "7 PM", "title": "Hacking Starts" },
-        { "time": "8-9 AM", "title": "Reception for Non-Overnight Hackers" },
+        { "time": "8-9 AM", "title": "Reception for Day-Only Hackers" },
         { "time": "4 PM", "title": "Hacking Ends" },
         { "time": "4-5 PM", "title": "Judging" },
         { "time": "5-6 PM", "title": "Closing Ceremony" }

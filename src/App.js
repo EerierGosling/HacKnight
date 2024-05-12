@@ -217,7 +217,7 @@ function App() {
 
             <p style={{fontSize: "25px", color: "white", width:column_width, paddingLeft:"30px"}}>
               During the <span className="accent-text">Hackathon</span>, you can come <b>build your own project</b> and compete to <b>win prizes</b>!
-              <p style={{fontSize:"20px", color:"rgba(255, 255, 255, 0.7)"}}>You have the option to hack for 24 hours, (the overnight hackathon) or 9 (the non-overnight hackathon).</p>
+              <p style={{fontSize:"20px", color:"rgba(255, 255, 255, 0.7)"}}>You have the option to hack for 24 hours, (the overnight hackathon) or 9 (the day hackathon).</p>
             </p>
           </div>
 
