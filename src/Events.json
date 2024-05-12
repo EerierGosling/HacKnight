@@ -3,7 +3,8 @@
         { "time": "10 AM", "title": "Opening Ceremony" },
         { "time": "10:30 AM", "title": "Workshop 1" },
         { "time": "12 PM", "title": "Lunch" },
-        { "time": "3 PM", "title": "Workshop 2" }
+        { "time": "1 PM", "title": "Workshop 2" },
+        { "time": "3 PM", "title": "Closing Ceremony" }
     ],
     "hackathon": [
         { "time": "6 PM", "title": "Opening Ceremony" },

@@ -4,8 +4,23 @@
     color: white;
     font-weight:bold;
     font-size:18px;
+    display:flex;
+    align-items: center;
+}
+
+.question p {
+    padding-left: 5px;
 }
 
 .answer {
     color: white;
+}
+
+.arrow {
+    height:20px;
+    transition: transform 0.3s ease;
+}
+
+.rotate {
+    transform: rotate(90deg);
 }

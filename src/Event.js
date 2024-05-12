@@ -7,7 +7,7 @@ function Event({time, title, index}) {
         <hr></hr>
       }
       <div style={{display: 'flex'}}>
-        <div style={{width:120}}>
+        <div style={{width:150}}>
           <p style={{color:'white', fontWeight:'bold', fontSize:"20px", paddingRight:"5px"}}>
             {time}:
           </p>

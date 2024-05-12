@@ -1,4 +1,5 @@
 import './Question.css';
+import arrow_image from "./assets/arrow.svg"
 import React, { useState } from 'react';
 
 function Question({question, answer}) {
@@ -11,8 +12,11 @@ function Question({question, answer}) {
 
   return (
     <div className="question-dropdown">
-      <div onClick={toggleDropdown} className="question">
-        <p>{showing ? "▼" : "►"} {question}</p>
+      <div onClick={toggleDropdown} className="question" >
+        <img className={showing ? "arrow rotate" : "arrow"} src={arrow_image} alt="arrow" />
+        <p>
+          {question}
+        </p>
       </div>
       {showing && 
         <div id="answer" className="answer">
