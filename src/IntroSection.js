@@ -11,7 +11,7 @@ function IntroSection({image, title, text, index, column_width}) {
         <p style={{fontSize:"25px", fontWeight:"bold"}}>{title}</p>
         <p> {text} </p>
       </div>
-      <img src={image} style={{height:"200px", width:"200px"}} />
+      <img src={image} style={{height:"200px", width:"200px", borderRadius: "20px"}} />
     </div>
   );
 }

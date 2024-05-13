@@ -38,42 +38,11 @@ function Content() {
   const [scrollY, setScrollY] = useState(0);
   const [viewWidth, setViewWidth] = useState();
   const [viewHeight, setViewHeight] = useState();
-  const autoScrollRef = useRef(null);
 
-  const scrollInterval = 50;
-  const scrollStep = 1000;
-
-
-  const handleUserScroll = () => {
-    if (autoScrollRef.current) {
-        clearInterval(autoScrollRef.current);
-        autoScrollRef.current = null;
-    }
-    const newScrollY = window.scrollY;
-    if (newScrollY !== scrollY) {
-        setScrollY(newScrollY);
-    }
-  };
-
-
-  const startAutoScroll = () => {
-    console.log("running!");
-    if (!autoScrollRef.current) {
-      autoScrollRef.current = setInterval(() => {
-        if (scrollY >= 1) {  // Stop scrolling when scrollY reaches or exceeds 1
-          clearInterval(autoScrollRef.current);
-          autoScrollRef.current = null;
-        } else {
-          window.scrollBy(0, scrollStep); // Scrolls vertically by 'scrollStep' pixels
-        }
-      }, scrollInterval);
-    }
-  };
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(Math.max(window.scrollY/viewHeight, 0));
-      setupInactivityTimeout();
 
       // document.body.style.backgroundColor = getColor(scrollY);
     };
@@ -83,16 +52,8 @@ function Content() {
       setViewHeight(window.innerHeight);
     };
 
-    const setupInactivityTimeout = () => {
-      clearTimeout(autoScrollRef.current);  // Clear any existing timeouts
-      autoScrollRef.current = setTimeout(() => {
-          startAutoScroll();
-      }, 10000);  // 10 seconds of inactivity
-    };
-
     handleScroll();
     handleResize();
-    setupInactivityTimeout();
 
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', handleResize);
