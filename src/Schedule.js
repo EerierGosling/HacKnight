@@ -19,8 +19,8 @@ function Schedule({colunm_width}) {
           Schedule
         </p>
         <div className="schedule-options" style={{display: 'flex'}}>
-            <p className="schedule-type" onClick={changeToLearnathon} style={{color: showing_events===events.learnathon ? "rgb(255, 234, 100)" : "white", paddingRight:"30px"}}>Learnathon</p>
-            <p className="schedule-type" onClick={changeToHackathon} style={{color: showing_events===events.hackathon ? "rgb(255, 234, 100)" : "white"}}>Hackathon</p>
+            <p className="schedule-type" onClick={changeToLearnathon} style={{color: showing_events===events.learnathon ? "rgb(255, 234, 100)" : "white", cursor: showing_events===events.learnathon ? "" : "pointer", paddingRight:"30px"}}>Learnathon</p>
+            <p className="schedule-type" onClick={changeToHackathon} style={{color: showing_events===events.hackathon ? "rgb(255, 234, 100)" : "white", cursor: showing_events===events.hackathon ? "" : "pointer"}}>Hackathon</p>
         </div>
 
         <p style={{fontSize:"18px", color:"white", fontStyle:"italic"}}>

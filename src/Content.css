@@ -85,6 +85,10 @@ body {
   border:none;
 }
 
+.button-link-nav:hover {
+  cursor: pointer;
+}
+
 .button-link {
   display: inline-block;
   padding: 20px 25px;
@@ -96,6 +100,10 @@ body {
   border-radius: 10px;
   font-weight: bold;
   border:none;
+}
+
+.button-link:hover {
+  cursor: pointer;
 }
 
 .faq {
