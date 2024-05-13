@@ -158,7 +158,7 @@ function Content() {
         </div>
       }
 
-      <div style={{height:viewHeight, width:"100%", display:"flex", position:"fixed", flexDirection: "column", justifyContent: "flex-end", alignItems: "center", color:"white"}}>
+      <div style={{height:viewHeight, width:"100%", display:"flex", position:"fixed", flexDirection: "column", justifyContent: "flex-end", alignItems: "center", color:"white", pointerEvents: "none"}}>
         <ScrollArrow/>
       </div>
 
