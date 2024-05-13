@@ -4,13 +4,13 @@ import './Content.css';
 import Question from './Question';
 import Schedule from './Schedule';
 import questions from './Questions.json';
+import ScrollArrow from './ScrollArrow.js'
 import IntroSection from './IntroSection.js'
 import intro_sections from './Intro.json';
 
 import MiddleHills from './MiddleHills.js';
 
 import React, { useState, useEffect, useRef } from 'react';
-import sun_image from './assets/sun.png';
 import moon_image from './assets/moon.png';
 import clouds from './assets/clouds.png';
 
@@ -59,17 +59,16 @@ function Content() {
   const startAutoScroll = () => {
     console.log("running!");
     if (!autoScrollRef.current) {
-        autoScrollRef.current = setInterval(() => {
-            if (scrollY >= 1) {  // Stop scrolling when scrollY reaches or exceeds 1
-                clearInterval(autoScrollRef.current);
-                autoScrollRef.current = null;
-            } else {
-                window.scrollBy(0, scrollStep); // Scrolls vertically by 'scrollStep' pixels
-            }
-        }, scrollInterval);
+      autoScrollRef.current = setInterval(() => {
+        if (scrollY >= 1) {  // Stop scrolling when scrollY reaches or exceeds 1
+          clearInterval(autoScrollRef.current);
+          autoScrollRef.current = null;
+        } else {
+          window.scrollBy(0, scrollStep); // Scrolls vertically by 'scrollStep' pixels
+        }
+      }, scrollInterval);
     }
   };
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -198,9 +197,13 @@ function Content() {
         </div>
       }
 
+      <div style={{height:viewHeight, width:"100%", display:"flex", position:"fixed", flexDirection: "column", justifyContent: "flex-end", alignItems: "center", color:"white"}}>
+        <ScrollArrow/>
+      </div>
+
       <div style={{height:viewHeight}}></div>
 
-      <div className="site-content" style={{zIndex:"-5"}}>
+      <div className="site-content" style={{zIndex:"-5", justifyContent: "center", alignItems: "center", zIndex:10}}>
         <div className="intro">
 
           <div style={{width:column_width+300, paddingBottom:"40px"}}>
@@ -235,11 +238,15 @@ function Content() {
           </p>
           {questions.map((question) => <Question key={question.id} question={question.question} answer={question.answer}/>)}
         </div>
-        <div style={{display:"flex", alignItems:"center", justifyContent: "center"}}>
-          <p style={{color:"white", fontSize:"20px"}}>
-            Are your parents worried? Check out our <a href="https://docs.google.com/document/d/153dYEuwn99BKUlF328-Ua3jw0sY1UDIEqdfRUL9dRaQ/edit?usp=sharing/preview" target="_blank" rel="noreferrer" style={{color:"yellow"}}>Parent's Guide</a>!
-          </p>
+
+        <div style={{display: "flex", justifyContent: "center", alignItems: "center", width: "100%"}}>
+          <div style={{display: "flex", justifyContent: "center", alignItems: "center", width: column_width}}>
+            <p style={{color: "white", fontSize: "20px", textAlign: "center"}}>
+              Are your parents worried? Check out our <a href="https://docs.google.com/document/d/153dYEuwn99BKUlF328-Ua3jw0sY1UDIEqdfRUL9dRaQ/edit?usp=sharing/preview" target="_blank" rel="noreferrer" style={{color: "yellow"}}>Parent's Guide</a>!
+            </p>
+          </div>
         </div>
+
         <div className="footer" style={{paddingBottom:"10px"}}>
           <a href="https://bbns.org" target="_blank" rel="noreferrer">
             <img src="https://www.bbns.org/wp-content/uploads/2023/08/BBandN_logo-white.svg" className="bottom-logo" alt="BB&N Logo" height="100px"/>
