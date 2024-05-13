@@ -3,7 +3,7 @@ import Event from './Event';
 import events from './Events.json';
 import React, { useState } from 'react';
 
-function Schedule({colunm_width}) {
+function Schedule({column_width, mobile_view}) {
   const [showing_events, setShowingEvents] = useState(events.learnathon);
 
   function changeToLearnathon() {
@@ -14,7 +14,7 @@ function Schedule({colunm_width}) {
   }
 
   return (
-    <div className="schedule-container" style={{width: colunm_width}}>
+    <div className="schedule-container" style={{width:window.innerWidth < 1000 ? window.innerWidth-100 : column_width}}>
         <p className="schedule-title" style={{fontSize:"40px", color:"white", fontWeight:"bold"}}>
           Schedule
         </p>

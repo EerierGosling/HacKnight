@@ -64,7 +64,7 @@ function Content() {
     };
   }, [getColor, scrollY, viewHeight]);
 
-  const mobile_view = viewWidth < 900;
+  const mobile_view = viewWidth < 1000;
 
   const hills_size = Math.min(viewWidth, viewHeight);
 
@@ -91,7 +91,7 @@ function Content() {
 
   const transform_down = `translateY(${hill_height*Math.max(scrollY*.5, 0)}px)`;
 
-  const column_width = `${Math.min(window.innerWidth-200, 800)}px`;
+  const column_width = Math.min(window.innerWidth-200, 800);
 
 
 
@@ -124,7 +124,7 @@ function Content() {
               }
             </div>
 
-            <img className="clouds" src={clouds} alt="clouds" style={{height:hills_size, width:hills_size, top:`${viewHeight - hills_size + (viewWidth > 600 && viewWidth < 900 ? 80 : 0)}px`, transform: transform_right}} />
+            <img className="clouds" src={clouds} alt="clouds" style={{height:hills_size, width:hills_size, top:`${viewHeight - hills_size + (viewWidth > 600 && viewWidth < 1000 ? 80 : 0)}px`, transform: transform_right}} />
             
             <div className="all-hills" style={{top:`${viewHeight-1024}px`}}>
               <img className="hill" src={hill_left_1} alt="hills" style={{height:hill_height, width:hills_left_width, zIndex:"-1", top:`${viewHeight-hill_height}px`, left:0, transform: `${transform_left} ${transform_down}`}}/>
@@ -167,7 +167,7 @@ function Content() {
       <div className="site-content" style={{zIndex:"-5", justifyContent: "center", alignItems: "center", zIndex:10}}>
         <div className="intro">
 
-          <div style={{width:column_width+300, paddingBottom:"40px"}}>
+          <div style={{width:column_width+110, paddingBottom:"40px"}}>
 
             <p style={{fontSize: "35px", color: "white", fontWeight: "bold", paddingBottom:"10px"}}>
               HacKnight has two parts: <br></br>
@@ -175,11 +175,11 @@ function Content() {
             </p>
 
 
-            <p style={{fontSize: "25px", color: "white", width:column_width, paddingLeft:"30px"}}>
+            <p style={{fontSize: "25px", color: "white", width: mobile_view ? window.innerWidth-80 : column_width, paddingLeft:mobile_view ? "0px" : "30px"}}>
               During the <span className="accent-text">Learnathon</span>, you can come to <b>workshops</b> hosted by BB&N students, <b>learn new skills</b>, and talk to guest speakers!
             </p>
 
-            <p style={{fontSize: "25px", color: "white", width:column_width, paddingLeft:"30px"}}>
+            <p style={{fontSize: "25px", color: "white", width: mobile_view ? window.innerWidth-80 : column_width, paddingLeft:mobile_view ? "0px" : "30px"}}>
               During the <span className="accent-text">Hackathon</span>, you can come <b>build your own project</b> and compete to <b>win prizes</b>!
               <p style={{fontSize:"20px", color:"rgba(255, 255, 255, 0.7)"}}>You have the option to hack for 24 hours, (the overnight hackathon) or 9 (the day hackathon).</p>
             </p>
@@ -191,9 +191,9 @@ function Content() {
           ))}
         </div>
 
-        <Schedule colunm_width={column_width}/>
+        <Schedule column_width={column_width} mobile_view={mobile_view} />
 
-        <div className="faq" style={{width:column_width}}>
+        <div className="faq" style={{width:window.innerWidth < 1000 ? window.innerWidth-100 : column_width}}>
           <p className="schedule-title" style={{fontSize:"25px", color:"white", fontWeight:"bold"}}>
             FAQ
           </p>
@@ -201,7 +201,7 @@ function Content() {
         </div>
 
         <div style={{display: "flex", justifyContent: "center", alignItems: "center", width: "100%"}}>
-          <div style={{display: "flex", justifyContent: "center", alignItems: "center", width: column_width}}>
+          <div style={{display: "flex", justifyContent: "center", alignItems: "center", width: window.innerWidth < 1000 ? window.innerWidth-100 : column_width}}>
             <p style={{color: "white", fontSize: "20px", textAlign: "center"}}>
               Are your parents worried? Check out our <a href="https://docs.google.com/document/d/153dYEuwn99BKUlF328-Ua3jw0sY1UDIEqdfRUL9dRaQ/edit?usp=sharing/preview" target="_blank" rel="noreferrer" style={{color: "yellow"}}>Parent's Guide</a>!
             </p>

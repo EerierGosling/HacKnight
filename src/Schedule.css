@@ -1,10 +1,6 @@
 @import 'shared-formatting.css';
 
-/*  */
-
-
 .schedule-container {
-    width: 90vw;
     background-color: var(--transperent-box);
     padding: 20px;
     border-radius: 25px;
@@ -39,5 +35,13 @@
 @media (max-width: 500px) {
     .schedule-options {
         flex-direction: column;
+    }
+}
+
+@media (max-width: 1000px) {
+    .schedule-container {
+        padding: 0px;
+        padding-left:30px;
+        padding-right:30px;
     }
 }
