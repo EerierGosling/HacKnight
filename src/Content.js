@@ -151,7 +151,7 @@ function Content() {
         </div>
 
         <div className="signup-button">
-          <button className="button-link-nav" onClick={() => window.location.href = '/form'}>Sign Up!</button>
+          <button className="button-link-nav" onClick={() => window.location.href = '/signup'}>Sign Up!</button>
         </div>
       </div>
 
@@ -190,7 +190,7 @@ function Content() {
                 Come for free, and compete for prizes!
               </p>
               <div className="signup-button">
-                <button className="button-link" onClick={() => window.location.href = '/form'}>Sign Up!</button>
+                <button className="button-link" onClick={() => window.location.href = '/signup'}>Sign Up!</button>
               </div>
             </div>
           }
