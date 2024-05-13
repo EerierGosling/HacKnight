@@ -143,11 +143,11 @@ function Content() {
               <div className="center-content">
                 <img src={hacknight_text} alt="HacKnight" style={{width:`${mobile_view ? 90 : 40 }vw`, transform:"translateX(-1vw)" }} />
               </div>
-              <p className="time-location">
-                June 1-2, <a href="https://maps.app.goo.gl/yovXzF5TM46DzRep9" target="_blank" rel="noreferrer" style={{color:'yellow'}}>BB&N High School</a>
-              </p>
               <p className="tagline">
-                Come for free, and compete for prizes!
+                Code the Knight away!
+              </p>
+              <p className="time-location">
+                June 1-2, at <a href="https://maps.app.goo.gl/yovXzF5TM46DzRep9" target="_blank" rel="noreferrer" style={{color:'yellow'}}>BB&N High School</a> in the Boston Area
               </p>
               <div className="signup-button">
                 <button className="button-link" onClick={() => window.location.href = '/signup'}>Sign Up!</button>
