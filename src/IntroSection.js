@@ -1,7 +1,7 @@
 import "./IntroSection.css";
 import React from "react";
 
-function IntroSection({ image, title, text, index, column_width }) {
+function IntroSection({ image, title, text, index, column_width, alt }) {
     // const box_width = Math.min(700, window.innerWidth * 0.6);
 
     const width =
@@ -26,6 +26,7 @@ function IntroSection({ image, title, text, index, column_width }) {
                     width: "200px",
                     borderRadius: "20px",
                 }}
+                alt={alt}
             />
             <div
                 style={{

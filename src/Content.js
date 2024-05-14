@@ -187,7 +187,7 @@ function Content() {
 
 
           {intro_sections.map((section, index) => (
-            <IntroSection key={section.id} image={require(`${section.image}`)} title={section.title} text={section.text} index={index} column_width={column_width} />
+            <IntroSection key={section.id} image={require(`${section.image}`)} title={section.title} text={section.text} index={index} column_width={column_width} alt={section.alt} />
           ))}
         </div>
 
