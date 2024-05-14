@@ -3,7 +3,7 @@ import "./Event.css";
 function Event({ time, title, index }) {
     return (
         <div>
-            {index != 0 && <hr></hr>}
+            {index !== 0 && <hr></hr>}
             <div style={{ display: "flex" }}>
                 <div style={{ width: 150 }}>
                     <p

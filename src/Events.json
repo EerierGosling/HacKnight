@@ -8,10 +8,13 @@
     ],
     "hackathon": [
         { "time": "6 PM", "title": "Opening Ceremony" },
-        { "time": "7 PM", "title": "Hacking Starts" },
-        { "time": "8-9 AM", "title": "Reception for Day-Only Hackers" },
+        { "time": "7 PM", "title": "Dinner + Hacking Starts" },
+        { "time": "11-12 PM", "title": "Late Night Games" },
+        { "time": "8 AM", "title": "Breakfast"},
+        { "time": "8-9 AM", "title": "Reception for Day Hackers" },
+        { "time": "12 PM", "title": "Lunch" },
         { "time": "4 PM", "title": "Hacking Ends" },
-        { "time": "4-5 PM", "title": "Judging" },
-        { "time": "5-6 PM", "title": "Closing Ceremony" }
+        { "time": "4:30 PM", "title": "Judging" },
+        { "time": "5:30 PM", "title": "Closing Ceremony" }
     ]
 }

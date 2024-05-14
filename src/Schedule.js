@@ -22,7 +22,7 @@ function Schedule({ column_width, mobile_view }) {
                         ? window.innerWidth - 100
                         : column_width,
             }}>
-            <p
+            <h1
                 className="schedule-title"
                 style={{
                     fontSize: "40px",
@@ -30,6 +30,15 @@ function Schedule({ column_width, mobile_view }) {
                     fontWeight: "bold",
                 }}>
                 Schedule
+            </h1>
+            <p
+                style={{
+                    fontSize: "16px",
+                    color: "white",
+                    fontStyle: "italic",
+                }}
+            >
+              The schedule is subject to change and will be updated as we get closer to the event. All times are in Eastern Daylight Time (EDT).
             </p>
             <div className="schedule-options" style={{ display: "flex" }}>
                 <p
@@ -74,6 +83,16 @@ function Schedule({ column_width, mobile_view }) {
                 {showing_events === events.learnathon
                     ? "Saturday, June 1"
                     : "Saturday, June 1 (6 PM) — Sunday, June 2 (6 PM)"}
+            </p>
+            <p
+                style={{
+                    fontSize: "14px",
+                    color: "white",
+                }}
+            >
+                {showing_events === events.hackathon
+                    ? "Hackathon workshops and talks will be added closer to the event."
+                    : ""}
             </p>
 
             <div className="schedule-content">
