@@ -10,7 +10,7 @@ import intro_sections from './Intro.json';
 
 import MiddleHills from './MiddleHills.js';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import moon_image from './assets/moon.png';
 import clouds from './assets/clouds.png';
 
@@ -84,7 +84,7 @@ function Content() {
   const top_padding = `${top_padding_num}vh`;
   const left_padding = `${100*(r_x*(Math.sin(scrollY*1.5))+starting_x)}vw`;
 
-  const scroll_freeze = Math.min(scrollY, .72);
+  // const scroll_freeze = Math.min(scrollY, .72);
 
   const transform_left = `translateX(calc(-100vw*${Math.max(scrollY*.5, 0)}))`;
   const transform_right = `translateX(calc(100vw*${Math.max(scrollY*.5, 0)}))`;
@@ -164,7 +164,7 @@ function Content() {
 
       <div style={{height:viewHeight}}></div>
 
-      <div className="site-content" style={{zIndex:"-5", justifyContent: "center", alignItems: "center", zIndex:10}}>
+      <div className="site-content" style={{justifyContent: "center", alignItems: "center", zIndex:10}}>
         <div className="intro">
 
           <div style={{width:column_width+110, paddingBottom:"40px"}}>
