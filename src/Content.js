@@ -212,9 +212,16 @@ function Content() {
           <a href="https://bbns.org" target="_blank" rel="noreferrer">
             <img src="https://www.bbns.org/wp-content/uploads/2023/08/BBandN_logo-white.svg" className="bottom-logo" alt="BB&N Logo" height="100px"/>
           </a>
-          <a href="https://hackclub.com" target="_blank" rel="noreferrer">
+          {/* <a href="https://hackclub.com" target="_blank" rel="noreferrer">
             <img src="https://assets.hackclub.com/flag-standalone-wtransparent.svg" className="bottom-logo" alt="Hack Club Logo" height="70px"/>
-          </a>
+          </a> */}
+        </div>
+        <div style={{display: "flex", justifyContent: "center", alignItems: "center", width: "100%"}}>
+          <div style={{display: "flex", justifyContent: "center", alignItems: "center", width: window.innerWidth < 1000 ? window.innerWidth-100 : column_width}}>
+            <p style={{color: "white", opacity:".8", fontSize: "15px", textAlign: "center"}}>
+              Want to see how we made this website? Check out our <a href="https://github.com/EerierGosling/HacKnight" target="_blank" rel="noreferrer" style={{color: "yellow"}}>GitHub Repo</a>!
+            </p>
+          </div>
         </div>
       </div>
     </div>

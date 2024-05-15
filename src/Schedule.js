@@ -40,7 +40,7 @@ function Schedule({ column_width, mobile_view }) {
             >
               The schedule is subject to change and will be updated as we get closer to the event. All times are in Eastern Daylight Time (EDT).
             </p>
-            <div className="schedule-options" style={{ display: "flex" }}>
+            <div className="schedule-options" style={{ display: "flex"}}>
                 <p
                     className="schedule-type"
                     onClick={changeToLearnathon}
@@ -53,7 +53,7 @@ function Schedule({ column_width, mobile_view }) {
                             showing_events === events.learnathon
                                 ? ""
                                 : "pointer",
-                        paddingRight: "30px",
+                        paddingRight: "30px"
                     }}>
                     Learnathon
                 </p>
@@ -73,6 +73,15 @@ function Schedule({ column_width, mobile_view }) {
                     Hackathon
                 </p>
             </div>
+
+            <p
+                style={{
+                    fontSize: "13px",
+                    color: "white"
+                }}
+            >
+              Click <span style={{fontStyle:"italic"}}>Hackathon</span> or <span style={{fontStyle:"italic"}}>Learnathon</span> to see the different schedules!
+            </p>
 
             <p
                 style={{
