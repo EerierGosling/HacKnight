@@ -24,17 +24,6 @@ function Content() {
   const starting_color = [167, 220, 255];
   const ending_color = [28, 33, 49];
 
-  const getColor = (percentage) => {
-    if (percentage > .25) {
-      return `rgb(${ending_color[0]}, ${ending_color[1]}, ${ending_color[2]})`;
-    }
-    const r = Math.round(starting_color[0] + (ending_color[0] - starting_color[0]) * percentage*4);
-    const g = Math.round(starting_color[1] + (ending_color[1] - starting_color[1]) * percentage*4);
-    const b = Math.round(starting_color[2] + (ending_color[2] - starting_color[2]) * percentage*4);
-
-    return `rgb(${r}, ${g}, ${b})`;
-  }
-
   const [scrollY, setScrollY] = useState(0);
   const [viewWidth, setViewWidth] = useState();
   const [viewHeight, setViewHeight] = useState();
@@ -62,7 +51,7 @@ function Content() {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('rezize', handleResize);
     };
-  }, [getColor, scrollY, viewHeight]);
+  }, [scrollY, viewHeight]);
 
   const mobile_view = viewWidth < 1000;
 
