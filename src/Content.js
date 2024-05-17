@@ -21,9 +21,6 @@ import hill_right_4 from './assets/hills/right/4.png';
 
 function Content() {
 
-  const starting_color = [167, 220, 255];
-  const ending_color = [28, 33, 49];
-
   const [scrollY, setScrollY] = useState(0);
   const [viewWidth, setViewWidth] = useState();
   const [viewHeight, setViewHeight] = useState();
