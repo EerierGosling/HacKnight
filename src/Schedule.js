@@ -108,7 +108,8 @@ function Schedule({ column_width, mobile_view }) {
                 {" "}
                 {showing_events.map((event, index) => (
                     <Event
-                        time={event.time}
+                        start_time={event.start_time}
+                        end_time={event.end_time}
                         title={event.title}
                         index={index}
                     />

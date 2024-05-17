@@ -1,11 +1,11 @@
 import "./Event.css";
 
-function Event({ time, title, index }) {
+function Event({ start_time, end_time, title, index }) {
     return (
         <div>
             {index !== 0 && <hr></hr>}
             <div style={{ display: "flex" }}>
-                <div style={{ width: 150 }}>
+                <div style={{ width: 180 }}>
                     <p
                         style={{
                             color: "white",
@@ -13,7 +13,8 @@ function Event({ time, title, index }) {
                             fontSize: "20px",
                             paddingRight: "5px",
                         }}>
-                        {time}:
+                        {start_time} {end_time && 
+                        <span> - <br></br>{end_time}</span>}:
                     </p>
                 </div>
                 <p style={{ color: "white", fontSize: "20px" }}>{title}</p>

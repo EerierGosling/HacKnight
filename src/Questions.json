@@ -37,6 +37,6 @@
     },
     {
         "question": "What if I have more questions?",
-        "answer": "Feel free to email us at hacknight@bbns.org"
+        "answer": "@@EMAIL@@"
     }
 ]

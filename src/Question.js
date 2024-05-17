@@ -21,7 +21,22 @@ function Question({ question, answer }) {
             </div>
             {showing && (
                 <div id="answer" className="answer">
-                    <p>{answer}</p>
+                    {answer === "@@EMAIL@@" ? 
+                    <p>
+                    Feel free to email us at{" "}
+                    <a
+                        href="mailto:hacknight@bbns.org"
+                        style={{
+                            color: "white",
+                            textDecoration: "underline",
+                        }}>
+                        hacknight@bbns.org
+                    </a>
+                    !
+                </p>
+                : 
+                <p>{answer}</p>
+                }
                 </div>
             )}
         </div>
