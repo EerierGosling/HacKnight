@@ -4,7 +4,7 @@ function Event({ start_time, end_time, title, index }) {
     return (
         <div>
             {index !== 0 && <hr></hr>}
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "flex", alignItems:"center"}}>
                 <div style={{ width: 180 }}>
                     <p
                         style={{
