@@ -177,15 +177,15 @@ function Content() {
           ))}
         </div>
 
+        <Schedule column_width={column_width} mobile_view={mobile_view} />
+
         <div style={{display: "flex", justifyContent: "center", alignItems: "center", width: "100%"}}>
           <div style={{display: "flex", justifyContent: "center", alignItems: "center", width: window.innerWidth < 1000 ? window.innerWidth-100 : column_width}}>
-            <p style={{color: "white", fontSize: "20px", textAlign: "center"}}>
+            <p style={{color: "white", fontSize: "30px", textAlign: "center"}}>
               Check out our workshops <a href="https://docs.google.com/document/d/1kk1hw4DBa5mL0YpR7kIsxWMjsTWw-VJ8CjBdsl5qWwc/preview" target="_blank" rel="noreferrer" style={{color: "yellow"}}>here</a>!
             </p>
           </div>
         </div>
-
-        <Schedule column_width={column_width} mobile_view={mobile_view} />
 
         <div className="faq" style={{width:window.innerWidth < 1000 ? window.innerWidth-100 : column_width}}>
           <p className="schedule-title" style={{fontSize:"25px", color:"white", fontWeight:"bold"}}>
