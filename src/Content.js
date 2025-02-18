@@ -96,9 +96,9 @@ function Content() {
           }
         </div>
 
-        <div className="signup-button">
+        {/* <div className="signup-button">
           <button className="button-link-nav" onClick={() => window.location.href = '/signup'}>Sign Up!</button>
-        </div>
+        </div> */}
       </div>
 
       {scrollY <= 1 &&
@@ -133,11 +133,11 @@ function Content() {
                 Code the Knight away!
               </p>
               <p className="time-location">
-                June 1-2, at <a href="https://maps.app.goo.gl/yovXzF5TM46DzRep9" target="_blank" rel="noreferrer" style={{color:'yellow'}}>BB&N High School</a> in the Boston Area
+                May 31 - June 1, 2025 at <a href="https://maps.app.goo.gl/yovXzF5TM46DzRep9" target="_blank" rel="noreferrer" style={{color:'yellow'}}>BB&N High School</a> in the Boston Area
               </p>
-              <div className="signup-button">
+              {/* <div className="signup-button">
                 <button className="button-link" onClick={() => window.location.href = '/signup'}>Sign Up!</button>
-              </div>
+              </div> */}
             </div>
           }
         
@@ -177,15 +177,15 @@ function Content() {
           ))}
         </div>
 
-        <Schedule column_width={column_width} mobile_view={mobile_view} />
+        {/* <Schedule column_width={column_width} mobile_view={mobile_view} /> */}
 
-        <div style={{display: "flex", justifyContent: "center", alignItems: "center", width: "100%"}}>
+        {/* <div style={{display: "flex", justifyContent: "center", alignItems: "center", width: "100%"}}>
           <div style={{display: "flex", justifyContent: "center", alignItems: "center", width: window.innerWidth < 1000 ? window.innerWidth-100 : column_width}}>
             <p style={{color: "white", fontSize: "30px", textAlign: "center"}}>
               Check out our workshops <a href="https://docs.google.com/document/d/1kk1hw4DBa5mL0YpR7kIsxWMjsTWw-VJ8CjBdsl5qWwc/preview" target="_blank" rel="noreferrer" style={{color: "yellow"}}>here</a>!
             </p>
           </div>
-        </div>
+        </div> */}
 
         <div className="faq" style={{width:window.innerWidth < 1000 ? window.innerWidth-100 : column_width}}>
           <p className="schedule-title" style={{fontSize:"25px", color:"white", fontWeight:"bold"}}>

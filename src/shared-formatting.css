@@ -1,9 +1,9 @@
 :root {
-    --background-light: rgb(167, 220, 255);
-    --background: #151925; /* also in App.js */
-    --accent-yellow: rgb(255, 234, 100);
-    --accent-blue: #64ddff; /* fix this */
-    --transperent-box: #44619a62;
-    --hill-green: rgb(92, 144, 96);
+  --background-light: rgb(167, 220, 255);
+  --background: #151925; /* also in App.js */
+  --accent-yellow: rgb(255, 234, 100);
+  --accent-blue: #64ddff; /* fix this */
+  --transperent-box: #44619a62;
+  --hill-green: rgb(92, 144, 96);
 
-  }
+}
