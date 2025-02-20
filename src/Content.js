@@ -96,9 +96,9 @@ function Content() {
           }
         </div>
 
-        {/* <div className="signup-button">
+        <div className="signup-button">
           <button className="button-link-nav" onClick={() => window.location.href = '/signup'}>Sign Up!</button>
-        </div> */}
+        </div>
       </div>
 
       {scrollY <= 1 &&
@@ -135,9 +135,9 @@ function Content() {
               <p className="time-location">
                 May 31 - June 1, 2025 at <a href="https://maps.app.goo.gl/yovXzF5TM46DzRep9" target="_blank" rel="noreferrer" style={{color:'yellow'}}>BB&N High School</a> in the Boston Area
               </p>
-              {/* <div className="signup-button">
+              <div className="signup-button">
                 <button className="button-link" onClick={() => window.location.href = '/signup'}>Sign Up!</button>
-              </div> */}
+              </div>
             </div>
           }
         

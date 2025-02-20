@@ -45,7 +45,7 @@ const Form = () => {
                 overflow: "auto",
             }}>
             <iframe
-                data-tally-src="https://tally.so/r/mOAybM"
+                data-tally-src="https://tally.so/r/wz1rea"
                 loading="lazy"
                 style={{
                     width: "100%", // Use 100% to ensure it fits the container
