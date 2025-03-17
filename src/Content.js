@@ -197,7 +197,7 @@ function Content() {
         <div style={{display: "flex", justifyContent: "center", alignItems: "center", width: "100%"}}>
           <div style={{display: "flex", justifyContent: "center", alignItems: "center", width: window.innerWidth < 1000 ? window.innerWidth-100 : column_width}}>
             <p style={{color: "white", fontSize: "20px", textAlign: "center"}}>
-              Are your parents worried? Check out our <a href="https://docs.google.com/document/d/153dYEuwn99BKUlF328-Ua3jw0sY1UDIEqdfRUL9dRaQ/edit?usp=sharing/preview" target="_blank" rel="noreferrer" style={{color: "yellow"}}>Parent's Guide</a>!
+              Are your parents worried? Check out our <a href="https://docs.google.com/document/d/1HFM-9BbNoR7ELdUT5aJk4wnBbjg88wpMcC4UpYXopsw/preview" target="_blank" rel="noreferrer" style={{color: "yellow"}}>Parent's Guide</a>!
             </p>
           </div>
         </div>
