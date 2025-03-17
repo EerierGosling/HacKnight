@@ -177,7 +177,7 @@ function Content() {
           ))}
         </div>
 
-        {/* <Schedule column_width={column_width} mobile_view={mobile_view} /> */}
+        <Schedule column_width={column_width} mobile_view={mobile_view} />
 
         {/* <div style={{display: "flex", justifyContent: "center", alignItems: "center", width: "100%"}}>
           <div style={{display: "flex", justifyContent: "center", alignItems: "center", width: window.innerWidth < 1000 ? window.innerWidth-100 : column_width}}>

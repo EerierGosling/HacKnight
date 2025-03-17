@@ -2,21 +2,20 @@
     "learnathon": [
         { "start_time": "9 AM", "end_time": "10 AM", "title": "Check-in" },
         { "start_time": "10 AM", "end_time": "10:30 AM", "title": "Opening Ceremony" },
-        { "start_time": "10:30 AM", "end_time": "12 PM", "title": "Workshop 1" },
+        { "start_time": "10:30 AM", "end_time": "12 PM", "title": "Workshops - Block 1" },
         { "start_time": "12 PM", "end_time": "1 PM", "title": "Lunch" },
-        { "start_time": "1 PM", "end_time": "2:30 PM", "title": "Workshop 2" },
-        { "start_time": "2:30 PM", "end_time": "3 PM", "title": "Closing Ceremony" }
+        { "start_time": "1 PM", "end_time": "4:45 PM", "title": "Workshops - Block 2" },
+        { "start_time": "5 PM", "end_time": "5:30 PM", "title": "Closing Ceremony" }
     ],
     "hackathon": [
-        { "start_time": "6 PM", "end_time": "7 PM", "title": "Opening Ceremony" },
-        { "start_time": "7 PM", "title": "Hacking Starts" },
-        { "start_time": "7 PM", "end_time": "8 PM", "title": "Dinner" },
+        { "start_time": "6 PM", "end_time": "6:30 PM", "title": "Opening Ceremony" },
+        { "start_time": "6:30 PM", "title": "Hacking Starts" },
+        { "start_time": "6:30 PM", "end_time": "7:30 PM", "title": "Dinner" },
         { "start_time": "11 PM", "end_time": "12 AM", "title": "Late Night Games" },
-        { "start_time": "8 AM", "end_time": "9 AM", "title": "Breakfast"},
-        { "start_time": "8 AM", "end_time": "9 AM", "title": "Reception for Day Hackers" },
+        { "start_time": "8 AM", "end_time": "9 AM", "title": "Breakfast / Reception for Day Hackers"},
         { "start_time": "12 PM", "end_time": "1 PM", "title": "Lunch" },
         { "start_time": "4 PM", "title": "Hacking Ends" },
-        { "start_time": "4:30 PM", "end_time": "5:30 PM", "title": "Judging" },
+        { "start_time": "4:30 PM", "end_time": "5:15 PM", "title": "Demos + Voting" },
         { "start_time": "5:30 PM", "end_time": "6 PM", "title": "Closing Ceremony" }
     ]
 }
