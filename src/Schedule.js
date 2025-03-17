@@ -90,8 +90,8 @@ function Schedule({ column_width, mobile_view }) {
                     fontStyle: "italic",
                 }}>
                 {showing_events === events.learnathon
-                    ? "Saturday, June 1"
-                    : "Saturday, June 1 (6 PM) — Sunday, June 2 (6 PM)"}
+                    ? "Saturday, May 31"
+                    : "Saturday, May 31 (6 PM) — Sunday, June 1 (6 PM)"}
             </p>
             <p
                 style={{
