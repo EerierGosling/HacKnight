@@ -5,6 +5,7 @@ import '../components/MiddleHills.css';
 import '../components/Question.css';
 import '../components/Schedule.css';
 import '../components/ScrollArrow.css';
+import '../pages/index.css';
 
 export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />;

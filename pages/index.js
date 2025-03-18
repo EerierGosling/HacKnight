@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import hacknight_logo from '../public/hacknight.png';
 import hacknight_text from '../public/logo_text.png';
-import './index.css';
 import Question from '../components/Question';
 import Schedule from '../components/Schedule';
 import questions from '../data/Questions.json';
