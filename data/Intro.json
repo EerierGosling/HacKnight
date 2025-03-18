@@ -1,18 +1,18 @@
 [
     {
-        "image": "./assets/wonderland-lesson.jpg",
+        "image": "event-pictures/wonderland-lesson.jpg",
         "title": "Share your knowledge and learn new things",
         "text": "No matter your experience level, you will meet plenty of people to learn with. Join the learnathon to learn from a workshop or dive into the hackathon to explore by yourself.",
         "alt": "A projector screen showing a presentation on how to build a circuit board."
     },
     {
-        "image": "./assets/wonderland-project.jpg",
+        "image": "event-pictures/wonderland-project.jpg",
         "title": "Make cool stuff",
         "text": "Come to the hackathon and create an awesome project with a team or by yourself with a chance to win some cool prizes. Follow one of three tracks or forge your own adventure.",
         "alt": "A group of people crowded around a computer screen checking out a project."
     },
     {
-        "image": "./assets/angelhacks.jpeg",
+        "image": "event-pictures/angelhacks.jpeg",
         "title": "Create lasting memories",
         "text": "Meet new people, make friends, play games, create projects, and have a great time. Experience the community and make lasting memories.",
         "alt": "A group photo of all the participants at a hackathon."

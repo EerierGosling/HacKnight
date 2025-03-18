@@ -1,5 +1,3 @@
-@import 'shared-formatting.css';
-
 .schedule-container {
     background-color: var(--transperent-box);
     padding: 20px;

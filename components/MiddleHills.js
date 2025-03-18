@@ -1,8 +1,8 @@
 import "./MiddleHills.css";
-import hill_1 from "./assets/hills/middle/1.png";
-import hill_2 from "./assets/hills/middle/2.png";
-import hill_3 from "./assets/hills/middle/3.png";
-import hill_4 from "./assets/hills/middle/4.png";
+import hill_1 from "../public/hero/hills/middle/1.png";
+import hill_2 from "../public/hero/hills/middle/2.png";
+import hill_3 from "../public/hero/hills/middle/3.png";
+import hill_4 from "../public/hero/hills/middle/4.png";
 import React from "react";
 
 function MiddleHills({

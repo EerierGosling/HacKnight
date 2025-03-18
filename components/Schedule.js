@@ -1,6 +1,6 @@
 import "./Schedule.css";
-import Event from "./Event";
-import events from "./Events.json";
+import Event from "./Event.js";
+import events from "../data/Events.json";
 import React, { useState } from "react";
 
 function Schedule({ column_width, mobile_view }) {

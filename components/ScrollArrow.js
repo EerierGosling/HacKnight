@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import Image from 'next/image';
 
 import "./ScrollArrow.css";
-import arrow_image from "./assets/arrow-thinner.svg";
+import arrow_image from "../public/hero/arrow.svg";
 
 function ScrollArrow() {
     const [show, setShow] = useState(false);
@@ -45,7 +46,7 @@ function ScrollArrow() {
 
     return (
         <div className={`arrow-container ${show ? "show" : ""}`}>
-            <img className="scroll-arrow" src={arrow_image} alt="Arrow" />
+            <Image className="scroll-arrow" src={arrow_image} alt="Arrow" />
         </div>
     );
 }
