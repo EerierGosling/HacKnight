@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from 'next/image';
 
-import "./ScrollArrow.css";
 import arrow_image from "../public/hero/arrow.svg";
 
 function ScrollArrow() {
