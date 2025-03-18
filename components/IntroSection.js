@@ -1,4 +1,3 @@
-import "./IntroSection.css";
 import React from "react";
 
 function IntroSection({ image, title, text, index, column_width, alt }) {
@@ -15,8 +14,8 @@ function IntroSection({ image, title, text, index, column_width, alt }) {
                     window.innerWidth < 1000
                         ? "column"
                         : index % 2 === 0
-                        ? "row"
-                        : "row-reverse",
+                            ? "row"
+                            : "row-reverse",
                 width: width,
             }}>
             <img

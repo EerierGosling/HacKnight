@@ -1,4 +1,3 @@
-import "./MiddleHills.css";
 import hill_1 from "../public/hero/hills/middle/1.png";
 import hill_2 from "../public/hero/hills/middle/2.png";
 import hill_3 from "../public/hero/hills/middle/3.png";
