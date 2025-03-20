@@ -1,25 +1,25 @@
 import Image from 'next/image';
-import hacknight_logo from '../public/hacknight.png';
-import hacknight_text from '../public/logo_text.png';
-import Question from '../components/Question';
-import Schedule from '../components/Schedule';
-import questions from '../data/Questions.json';
-import ScrollArrow from '../components/ScrollArrow.js'
-import IntroSection from '../components/IntroSection.js'
-import intro_sections from '../data/Intro.json';
-
-import MiddleHills from '../components/MiddleHills.js';
+import Head from 'next/head';
 
 import React, { useState, useEffect } from 'react';
+
+import Question from '../components/Question';
+import Schedule from '../components/Schedule';
+import ScrollArrow from '../components/ScrollArrow.js';
+import IntroSection from '../components/IntroSection.js';
+import MiddleHills from '../components/MiddleHills.js';
+
+import intro_sections from '../data/Intro.json';
+import questions from '../data/Questions.json';
+
+import hacknight_logo from '../public/hacknight.png';
+import hacknight_text from '../public/logo_text.png';
 import moon_image from '../public/hero/moon.png';
 import clouds from '../public/hero/clouds.png';
-
 import hill_left_1 from '../public/hero/hills/left/1.png';
 import hill_left_3 from '../public/hero/hills/left/3.png';
 import hill_right_2 from '../public/hero/hills/right/2.png';
 import hill_right_4 from '../public/hero/hills/right/4.png';
-
-import Head from 'next/head';
 
 export default function Content() {
 
@@ -97,6 +97,14 @@ export default function Content() {
     <>
       <Head>
         <title>HacKnight</title>
+        <meta charSet="utf-8" />
+        <link rel="icon" href="/hacknight.png"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#000000" />
+        <meta
+          name="description"
+          content="May 31-June 1 in the Boston area."
+        />
       </Head>
       <div className="App">
 
