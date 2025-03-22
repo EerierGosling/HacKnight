@@ -1,4 +1,4 @@
-hr {
+.bar {
     border: none;  /* Removes default border styling */
     height: 1px;   /* Thickness of the line */
     background-color: rgba(0, 0, 0, 0.278); /* Color of the line */

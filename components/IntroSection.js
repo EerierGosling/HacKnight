@@ -1,6 +1,7 @@
 import React from "react";
+import styles from './IntroSection.module.css'
 
-function IntroSection({ image, title, text, index, column_width, alt }) {
+export default function IntroSection({ image, title, text, index, column_width, alt }) {
     // const box_width = Math.min(700, window.innerWidth * 0.6);
 
     const width =
@@ -8,7 +9,7 @@ function IntroSection({ image, title, text, index, column_width, alt }) {
 
     return (
         <div
-            className="section"
+            className={styles.section}
             style={{
                 flexDirection:
                     window.innerWidth < 1000
@@ -42,5 +43,3 @@ function IntroSection({ image, title, text, index, column_width, alt }) {
         </div>
     );
 }
-
-export default IntroSection;

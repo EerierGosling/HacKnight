@@ -42,15 +42,15 @@ body {
   left: 0;
 }
 
-.center-content {
-  display: flex;
-  margin: auto;
-}
-
-
 .content {
   width: 100%;
   text-align: center;
+}
+
+.wordmark-top {
+  height: auto;
+  transform: translateX(-1vw);
+  width: 40vw;
 }
 
 .tagline {
@@ -62,6 +62,7 @@ body {
 .time-location {
   color: white;
   font-size: 20px;
+  margin-right: 20px;
 }
 
 .info {
@@ -104,6 +105,13 @@ body {
   cursor: pointer;
 }
 
+.faq-title {
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  margin: 25px 0 15px 0;
+}
+
 .faq {
   width: 90vw;
   background-color: var(--transperent-box);
@@ -119,6 +127,7 @@ body {
   padding-right: 50px;
 
   margin: 20px auto;
+  margin-top: 50px;
   text-align: left;
 }
 
@@ -212,7 +221,13 @@ body {
   bottom: 0;
 }
 
-@media (max-width: 1000px) {
+@media(max-width: 1500px) {
+  .wordmark-top {
+    width: 50vw;
+  }
+}
+
+@media(max-width: 1000px) {
   .clouds {
     top: 100vh;
   }
@@ -221,5 +236,9 @@ body {
     padding: 0px;
     padding-left: 30px;
     padding-right: 30px;
+  }
+
+  .wordmark-top {
+    width: 90vw;
   }
 }

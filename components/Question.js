@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Image from 'next/image';
+import styles from './Question.module.css';
 
 import arrow_image from "../public/hero/arrow.svg";
 
-function Question({ question, answer }) {
+export default function Question({ question, answer }) {
     const [showing, setShowing] = useState(false);
 
     function toggleDropdown() {
@@ -11,17 +12,17 @@ function Question({ question, answer }) {
     }
 
     return (
-        <div className="question-dropdown">
-            <div onClick={toggleDropdown} className="question">
+        <div>
+            <div onClick={toggleDropdown} className={styles.question}>
                 <Image
-                    className={`arrow ${showing ? "rotate" : ""}`}
+                    className={`${styles.arrow} ${showing ? styles.rotate : ''}`}
                     src={arrow_image}
                     alt="arrow"
                 />
                 <p>{question}</p>
             </div>
             {showing && (
-                <div id="answer" className="answer">
+                <div id="answer" className={styles.answer}>
                     {answer === "@@EMAIL@@" ?
                         <p>
                             Feel free to email us at{" "}
@@ -43,5 +44,3 @@ function Question({ question, answer }) {
         </div>
     );
 }
-
-export default Question;

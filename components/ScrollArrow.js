@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Image from 'next/image';
+import styles from './ScrollArrow.module.css'
 
 import arrow_image from "../public/hero/arrow.svg";
 
-function ScrollArrow() {
+export default function ScrollArrow() {
     const [show, setShow] = useState(false);
 
     const handleShow = () => {
@@ -44,10 +45,8 @@ function ScrollArrow() {
     }, []);
 
     return (
-        <div className={`arrow-container ${show ? "show" : ""}`}>
-            <Image className="scroll-arrow" src={arrow_image} alt="Arrow" />
+        <div className={`${styles["arrow-container"]} ${show ? styles.show : ""}`}>
+            <Image className={styles["scroll-arrow"]} src={arrow_image} alt="Arrow" />
         </div>
     );
 }
-
-export default ScrollArrow;

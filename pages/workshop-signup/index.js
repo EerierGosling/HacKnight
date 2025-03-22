@@ -1,8 +1,6 @@
 import { FilloutFullScreenEmbed } from "@fillout/react";
 import "@fillout/react/style.css";
 
-function App() {
+export default function App() {
   return <FilloutFullScreenEmbed filloutId="qoKBXPrEjxus" inheritParameters />;
 }
-
-export default App;

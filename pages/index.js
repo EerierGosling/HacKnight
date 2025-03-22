@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 
 import Question from '../components/Question';
 import Schedule from '../components/Schedule';
+import Workshops from '../components/Workshops';
 import ScrollArrow from '../components/ScrollArrow.js';
 import IntroSection from '../components/IntroSection.js';
 import MiddleHills from '../components/MiddleHills.js';
@@ -87,10 +88,8 @@ export default function Content() {
 
   const column_width = Math.min(window.innerWidth - 200, 800);
 
-
-
   const middle_hills_arr = Array.from({ length: viewWidth / (hill_width_factor * 3000 * .8) }, (_, index) => (
-    <MiddleHills hill_height={hill_height} index={index} viewHeight={viewHeight} viewWidth={viewWidth} scrollY={scrollY} transform_left={transform_left} transform_right={transform_right} transform_down={transform_down} />
+    <MiddleHills key={index} hill_height={hill_height} index={index} viewHeight={viewHeight} viewWidth={viewWidth} scrollY={scrollY} transform_left={transform_left} transform_right={transform_right} transform_down={transform_down} />
   ));
 
   return (
@@ -98,7 +97,7 @@ export default function Content() {
       <Head>
         <title>HacKnight</title>
         <meta charSet="utf-8" />
-        <link rel="icon" href="/hacknight.png"/>
+        <link rel="icon" href="/hacknight.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <meta
@@ -132,7 +131,7 @@ export default function Content() {
 
               <Image className="clouds" src={clouds} alt="clouds" style={{ height: hills_size, width: hills_size, top: `${viewHeight - hills_size + (viewWidth > 600 && viewWidth < 1000 ? 80 : 0)}px`, transform: transform_right }} />
 
-              <div className="all-hills" style={{ top: `${viewHeight - 1024}px` }}>
+              <div className="all-hills" style={{ top: `${viewHeight - 1024}px`, display: 'flex' }}>
                 <Image className="hill" src={hill_left_1} alt="hills" style={{ height: hill_height, width: hills_left_width, zIndex: "-1", top: `${viewHeight - hill_height}px`, left: 0, transform: `${transform_left} ${transform_down}` }} />
                 <Image className="hill" src={hill_left_3} alt="hills" style={{ height: hill_height, width: hills_left_width, zIndex: "-3", top: `${viewHeight - hill_height}px`, left: 0, transform: `${transform_left} ${transform_down}` }} />
 
@@ -146,9 +145,7 @@ export default function Content() {
 
             {1 - scrollY * 2 > 0 &&
               <div className="header" style={{ opacity: Math.max(1 - scrollY * 2, 0) }}>
-                <div className="center-content">
-                  <Image src={hacknight_text} alt="HacKnight" style={{ width: `${mobile_view ? 90 : 40}vw`, height: "auto", transform: "translateX(-1vw)" }} />
-                </div>
+                <Image className="wordmark-top" src={hacknight_text} alt="HacKnight" />
                 <p className="tagline">
                   Code the Knight away!
                 </p>
@@ -207,6 +204,8 @@ export default function Content() {
 
           <Schedule column_width={column_width} mobile_view={mobile_view} />
 
+          {/* <Workshops column_width={column_width} /> */}
+
           {/* <div style={{display: "flex", justifyContent: "center", alignItems: "center", width: "100%"}}>
             <div style={{display: "flex", justifyContent: "center", alignItems: "center", width: window.innerWidth < 1000 ? window.innerWidth-100 : column_width}}>
               <p style={{color: "white", fontSize: "30px", textAlign: "center"}}>
@@ -216,9 +215,9 @@ export default function Content() {
           </div> */}
 
           <div className="faq" style={{ width: window.innerWidth < 1000 ? window.innerWidth - 100 : column_width }}>
-            <p className="schedule-title" style={{ fontSize: "25px", color: "white", fontWeight: "bold" }}>
+            <h1 className="faq-title">
               FAQ
-            </p>
+            </h1>
             {questions.map((question) => <Question key={question.id} question={question.question} answer={question.answer} />)}
           </div>
 

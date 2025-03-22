@@ -1,52 +1,47 @@
 [
     {
         "title": "Web Scraping with Beautiful Soup",
-        "text": "Using HTML and the Beautiful Soup Python library for web scraping.",
+        "description": "Using HTML and the Beautiful Soup Python library for web scraping.",
         "level": "Intermediate"
     },
     {
         "title": "Intro to Making Apps With Swift",
-        "text": "Using Swift to create iOS apps from scratch.",
+        "description": "Using Swift to create iOS apps from scratch.",
         "level": "Intermediate"
     },
     {
         "title": "Intro to Unity",
-        "text": "We'll learn the basics of the Unity game engine and build a simple 3D game by the end of the workshop!",
+        "description": "We'll learn the basics of the Unity game engine and build a simple 3D game by the end of the workshop!",
         "level": "Intermediate"
     },
     {
         "title": "Intro to Coding with Scratch",
-        "text": "We'll learn the basics of programming, from simple commands like moving to a position, to loops, conditional statements, and variables all in Scratch, a block coding language",
+        "description": "We'll learn the basics of programming, from simple commands like moving to a position, to loops, conditional statements, and variables all in Scratch, a block coding language",
         "level": "Beginner"
     },
     {
         "title": "Intro to Bash",
-        "text": "Learn the basics of using the command line interface through the OverTheWire wargames!",
+        "description": "Learn the basics of using the command line interface through the OverTheWire wargames!",
         "level": "Beginner"
     },
     {
-        "title": "How to write your own programming language",
-        "text": "Have you ever tried to program in Brainfuck? What about Chicken? If you're a fan of esoteric programming languages like me or just an enthusiastic cs nerd in general, you’re probably at least a little interested in writing your own fun programming language. Does this ring true for you? If so, join our workshop where we will start by reviewing the key components and principles of what makes a programming language, develop a roadmap to implement those ideas, and then give you guys a chance to give it a go on your own.",
-        "level": "Intermediate"
-    },
-    {
         "title": "Compiling the Code",
-        "text": "A computer archecture introduction. We will be learning how computer software works from binary to high-level languages",
+        "description": "A computer archecture introduction. We will be learning how computer software works from binary to high-level languages",
         "level": "Beginner"
     },
     {
         "title": "The Potential for AI in Finance",
-        "text": "We will use AI to create an investment portfolio . Using AI we will ask those who choose to participate to choose an industry within the public market and then from there choose a stock. With the help of AI they will analyze the companies 10k report (their yearly report) and create a pitch deck to sell the stock to the rest of the club.",
+        "description": "We will use AI to create an investment portfolio . Using AI we will ask those who choose to participate to choose an industry within the public market and then from there choose a stock. With the help of AI they will analyze the companies 10k report (their yearly report) and create a pitch deck to sell the stock to the rest of the club.",
         "level": "Beginner"
     },
     {
         "title": "Machine Learning",
-        "text": "We'll learn about machine learning and experiment with creating our own machine learning models!",
+        "description": "We'll learn about machine learning and experiment with creating our own machine learning models!",
         "level": "Beginner"
     },
     {
         "title": "Prompt Engineering: Incorporating ChatGPT into your programs",
-        "text": "We'll learn how to design a website with dynamic features that are linked to OpenAI's chatgpt! ",
+        "description": "We'll learn how to design a website with dynamic features that are linked to OpenAI's chatgpt! ",
         "level": "Intermediate"
     }
 ]

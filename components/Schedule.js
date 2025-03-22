@@ -1,8 +1,9 @@
 import Event from "./Event.js";
 import events from "../data/Events.json";
 import React, { useState } from "react";
+import styles from './Schedule.module.css';
 
-function Schedule({ column_width, mobile_view }) {
+export default function Schedule({ column_width, mobile_view }) {
     const [showing_events, setShowingEvents] = useState(events.learnathon);
 
     function changeToLearnathon() {
@@ -14,7 +15,7 @@ function Schedule({ column_width, mobile_view }) {
 
     return (
         <div
-            className="schedule-container"
+            className={styles["schedule-container"]}
             style={{
                 width:
                     window.innerWidth < 1000
@@ -22,7 +23,7 @@ function Schedule({ column_width, mobile_view }) {
                         : column_width,
             }}>
             <h1
-                className="schedule-title"
+                className={styles["schedule-title"]}
                 style={{
                     fontSize: "40px",
                     color: "white",
@@ -39,9 +40,9 @@ function Schedule({ column_width, mobile_view }) {
             >
                 The schedule is subject to change and will be updated as we get closer to the event. All times are in Eastern Daylight Time (EDT).
             </p>
-            <div className="schedule-options" style={{ display: "flex" }}>
+            <div className={styles["schedule-options"]} style={{ display: "flex" }}>
                 <p
-                    className="schedule-type"
+                    className={styles["schedule-type"]}
                     onClick={changeToLearnathon}
                     style={{
                         color:
@@ -57,7 +58,7 @@ function Schedule({ column_width, mobile_view }) {
                     Learnathon
                 </p>
                 <p
-                    className="schedule-type"
+                    className={styles["schedule-type"]}
                     onClick={changeToHackathon}
                     style={{
                         color:
@@ -103,7 +104,7 @@ function Schedule({ column_width, mobile_view }) {
                     : ""}
             </p>
 
-            <div className="schedule-content">
+            <div className={styles["schedule-content"]}>
                 {" "}
                 {showing_events.map((event, index) => (
                     <Event
@@ -117,5 +118,3 @@ function Schedule({ column_width, mobile_view }) {
         </div>
     );
 }
-
-export default Schedule;

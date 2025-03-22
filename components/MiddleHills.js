@@ -3,8 +3,9 @@ import hill_2 from "../public/hero/hills/middle/2.png";
 import hill_3 from "../public/hero/hills/middle/3.png";
 import hill_4 from "../public/hero/hills/middle/4.png";
 import React from "react";
+import Image from 'next/image';
 
-function MiddleHills({
+export default function MiddleHills({
     hill_height,
     index,
     viewHeight,
@@ -26,11 +27,8 @@ function MiddleHills({
     const full_transform = `${transform} ${transform_down}`;
 
     return (
-        <div
-            className="all-hills-middle"
-            style={{ height: hill_height, width: width }}>
-            <img
-                className="hill"
+        <div style={{ height: hill_height, width: width }}>
+            <Image
                 src={hill_1}
                 alt="hills"
                 style={{
@@ -39,11 +37,12 @@ function MiddleHills({
                     zIndex: "-1",
                     top: top,
                     left: left,
+                    bottom: 0,
                     transform: full_transform,
+                    position:"fixed"
                 }}
             />
-            <img
-                className="hill"
+            <Image
                 src={hill_2}
                 alt="hills"
                 style={{
@@ -52,11 +51,12 @@ function MiddleHills({
                     zIndex: "-2",
                     top: top,
                     left: left,
+                    bottom: 0,
                     transform: full_transform,
+                    position:"fixed"
                 }}
             />
-            <img
-                className="hill"
+            <Image
                 src={hill_3}
                 alt="hills"
                 style={{
@@ -65,11 +65,12 @@ function MiddleHills({
                     zIndex: "-3",
                     top: top,
                     left: left,
+                    bottom: 0,
                     transform: full_transform,
+                    position:"fixed"
                 }}
             />
-            <img
-                className="hill"
+            <Image
                 src={hill_4}
                 alt="hills"
                 style={{
@@ -78,11 +79,11 @@ function MiddleHills({
                     zIndex: "-4",
                     top: top,
                     left: left,
+                    bottom: 0,
                     transform: full_transform,
+                    position:"fixed"
                 }}
             />
         </div>
     );
 }
-
-export default MiddleHills;

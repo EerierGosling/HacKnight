@@ -1,7 +1,9 @@
-function Event({ start_time, end_time, title, index }) {
+import styles from './Event.module.css'
+
+export default function Event({ start_time, end_time, title, index }) {
   return (
     <div>
-      {index !== 0 && <hr></hr>}
+      {index !== 0 && <hr className={styles.bar}></hr>}
       <div style={{ display: "flex", alignItems: "center" }}>
         <div style={{ width: 180 }}>
           <p
@@ -20,5 +22,3 @@ function Event({ start_time, end_time, title, index }) {
     </div>
   );
 }
-
-export default Event;
