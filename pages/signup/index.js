@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export default Form = () => {
+const Form = () => {
     useEffect(() => {
         const widgetScriptSrc = "https://tally.so/widgets/embed.js";
 
@@ -56,3 +56,5 @@ export default Form = () => {
         </div>
     );
 };
+
+export default Form;
