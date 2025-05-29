@@ -204,7 +204,7 @@ export default function Content() {
 
           <Schedule column_width={column_width} mobile_view={mobile_view} />
 
-          {/* <Workshops column_width={column_width} /> */}
+          <Workshops column_width={column_width} />
 
           {/* <div style={{display: "flex", justifyContent: "center", alignItems: "center", width: "100%"}}>
             <div style={{display: "flex", justifyContent: "center", alignItems: "center", width: window.innerWidth < 1000 ? window.innerWidth-100 : column_width}}>

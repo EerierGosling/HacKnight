@@ -20,6 +20,11 @@
   font-size: 40px;
 }
 
+.workshops-block {
+  margin: 20px;
+  font-size: 30px;
+}
+
 .workshops-container {
   position: relative;
   box-sizing: border-box;
