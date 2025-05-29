@@ -39,13 +39,14 @@ function Workshop({ workshop }) {
   return (
     <div className={styles["workshop"]}>
       <h2>{workshop.title}</h2>
-      <h4>{workshop.leader} -{" "}
+      <h4>{workshop.leader}
+        {/* -{" "}
         {workshop.emails.map((email, index) => (
           <React.Fragment key={email}>
             {index > 0 && ', '}
             <a href={`mailto:${email}`} style={{ color: "white", textDecoration: "underline" }}>{email}</a>
           </React.Fragment>
-        ))}
+        ))} */}
       </h4>
       <p>{workshop.description}</p>
     </div>

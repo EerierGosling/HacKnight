@@ -2,102 +2,66 @@
     {
         "title": "Web Scraping with Beautiful Soup",
         "leader": "Diba Demir",
-        "emails": [
-            "ddemir@bbns.org"
-        ],
         "description": "Are you tired of scrolling endlessly through websites to find information? Web scraping allows you to access and store web data with a single click. In this workshop, we will use Python’s Beautiful Soup library to create a web scraping tool that will help us scrape a job listing website. Using this tool, we will find the best job that aligns with the user’s skills and needs! Introductory knowledge of Python and HTML is preferred, but not necessary.",
         "block": 1
     },
     {
         "title": "Intro to Unity",
         "leader": "Salar Sekhavat",
-        "emails": [
-            "ssekhavat@bbns.org"
-        ],
         "description": "Unity—the powerful, free game engine that has created some of the gaming industry’s biggest AAA and indie hits. But where do you start with such a huge and complex tool? In this workshop, we will delve into the basics of working with the Unity game engine and its C# code. By the end of this workshop, we will understand Unity and its interactions with C#, and we will have built an arcade-y spaceship game to explore the concepts we learned. For this workshop, it is recommended that you have no prior experience with Unity. If you are already familiar with Unity and C#, consider signing up for the Game Design with Unity workshop instead.",
         "block": 1
     },
     {
         "title": "Pitch Lab",
         "leader": "Ethan Miner, Oliver Straight-Nissen",
-        "emails": [
-            "ecminer@bbns.org",
-            "ostraightnissen@bbns.org"
-        ],
         "description": "We'll start by looking at real examples of how small teams building focused software solutions to real-world problems evolved into the digital tools and companies we rely on today. Then, you'll choose a problem you've faced in your own life and use whatever digital tools you want to prototype a solution. We'll end with a Shark Tank-style pitch, where we, the workshop organizers, give a verdict on whether or not we'd invest.",
         "block": 1
     },
     {
         "title": "Intro to Web Development",
         "leader": "Sofia Egan",
-        "emails": [
-            "segan@bbns.org"
-        ],
         "description": "In this workshop, you’ll learn how to make a basic HTML + CSS + JS website from scratch! We’ll start with the basics, and by the end, you’ll make your own website. This workshop is designed for beginners, but you’re welcome to come and build your own website even if you have some experience. If you do this workshop in the first block, you should consider continuing with Advanced Web Development with React in the second block!",
         "block": 1
     },
     {
         "title": "Creating your own Machine Learning Model",
         "leader": "David Guo, Kathy Lin",
-        "emails": [
-            "dguo@bbns.org",
-            "klin@bbns.org"
-        ],
         "description": "Artificial intelligence extends to every aspect of our lives, from language models like ChatGPT to automated robots. Machine learning is a subdomain of AI that allows computers to “learn” like humans and use patterns in data to make predictions. In this workshop, you will learn how to create your own machine-learning models! Prior coding experience is not required.",
         "block": 1
     },
     {
         "title": "Intro to Programming with Python",
         "leader": "Yancheng Zhao",
-        "emails": [
-            "yzhao@bbns.org"
-        ],
         "description": "Python is one of the most popular and beginner-friendly programming languages. Its versatility allows programmers to use it for anything from automating tasks to running complex machine learning networks. (Don’t worry—this workshop will not get quite as advanced!) Targeted toward complete beginners, this workshop introduces the basic concepts of programming—variables, loops, logic, functions, and more—by experimenting with Python’s turtle module. By the end of the session, participants will have developed a solid Python foundation and built a simple terminal-based game like Connect 4 to put their skills into practice.",
         "block": 1
     },
     {
         "title": "Game Design with Unity",
         "leader": "Salar Sekhavat",
-        "emails": [
-            "ssekhavat@bbns.org"
-        ],
         "description": "Video games are a labor of love; from coding to assets, every piece of the puzzle must fit together perfectly to create a great experience. But have you ever wanted to put that puzzle together yourself? In this workshop, we will learn how to use Unity to build our very own 2D adventure game. We will code the game’s C# scripts, tile a world, and even use the A* AI pathfinding library to make adaptable enemies. For this workshop, prior experience with Unity and C# is required. If you are not familiar with the basics of Unity and C#, consider signing up for the Intro to Unity workshop in the first block and this workshop in the second.",
         "block": 2
     },
     {
         "title": "Programming with Scratch",
         "leader": "Fitzie Hung, Carl Chen",
-        "emails": [
-            "fhung@bbns.org",
-            "cchen@bbns.org"
-        ],
         "description": "Dive into everyone’s favorite beginner-friendly programming tool, Scratch, and learn the fundamentals through game creation. We will start with the basics and gradually build up to designing a more complex and polished game, maybe even a childhood classic. Prior coding experience is not required.",
         "block": 2
     },
     {
         "title": "Advanced Web Development with React",
         "leader": "Sofia Egan",
-        "emails": [
-            "segan@bbns.org"
-        ],
         "description": "Learn how to make a website with React, one of the most popular front-end libraries! This workshop is designed for people who have experience with web development already. We’ll be using Next.js with JavaScript or TypeScript, whichever you prefer. If you’ve never done web development, consider signing up for Intro to Web Development in the first block and this workshop in the second!",
         "block": 2
     },
     {
         "title": "Radar Theory",
         "leader": "Diego Abadie",
-        "emails": [
-            "dabadie@bbns.org"
-        ],
         "description": "From self-driving cars to national security, radar is a technology that’s only becoming more prevalent. In this workshop, we’ll explore the fundamentals of radar with a focus on Synthetic Aperture Radar (SAR). You'll dive into the technical foundations of radar systems and learn how to process and optimize radar data. From the Doppler effect to filtering and signal processing techniques, the workshop will cover a range of topics to give you a comprehensive understanding of how radar works. Whether you're interested in aerospace, autonomous vehicles, or simply want to learn more about transformative technology, this session will give you a solid understanding of radar and its real-world applications.",
         "block": 2
     },
     {
         "title": "Object-Oriented Programming with Python",
         "leader": "Yancheng Zhao",
-        "emails": [
-            "yzhao@bbns.org"
-        ],
         "description": "While knowing how to write code is one thing, it’s another to take full advantage of all the language has to offer. Continuing from Intro to Programming with Python, this workshop introduces Object-Oriented Programming. Participants will use classes and objects and learn basic OOP principles like encapsulation and inheritance. This workshop also introduces graphical user interfaces through Python’s tkinter module, a beginner-friendly library for developing applications. By the end of the session, participants will have learned about object-oriented programming and built a grid-based game like Minesweeper with a GUI.",
         "block": 2
     }
